@@ -26,9 +26,7 @@ class RoleHasSubmenuSeeder extends Seeder
       // MANAGEDATA
       'data',
       'visitor',
-      'device',
       'access',
-      'logdata',
       'statistik',
 
       // MANAGEUSER
@@ -54,9 +52,7 @@ class RoleHasSubmenuSeeder extends Seeder
         // MANAGEDATA
         'data',
         'visitor',
-        'device',
         'access',
-        'logdata',
         'statistik',
 
         // MANAGEUSER
@@ -81,9 +77,7 @@ class RoleHasSubmenuSeeder extends Seeder
         // MANAGEDATA
         'data',
         'visitor',
-        'device',
         'access',
-        'logdata',
         'statistik',
 
         // MANAGEUSER
@@ -108,9 +102,7 @@ class RoleHasSubmenuSeeder extends Seeder
         // MANAGEDATA
         // 'data',
         // 'visitor',
-        // 'device',
         // 'access',
-        // 'logdata',
         // 'statistik',
 
         // MANAGEUSER
@@ -135,9 +127,7 @@ class RoleHasSubmenuSeeder extends Seeder
         // MANAGEDATA
         // 'data',
         // 'visitor',
-        // 'device',
         // 'access',
-        // 'logdata',
         // 'statistik',
 
         // MANAGEUSER

@@ -114,16 +114,6 @@ class SubmenuSeeder extends Seeder
       [
         'menu_id' => 6,
         'ssm' => 3,
-        'name' => 'device',
-        'slug' => 'device',
-        'route' => '/device',
-        'active' => 'device',
-        'routename' => '/device',
-        'description' => 'data device user'
-      ],
-      [
-        'menu_id' => 6,
-        'ssm' => 4,
         'name' => 'access',
         'slug' => 'access',
         'route' => '/access',
@@ -133,17 +123,7 @@ class SubmenuSeeder extends Seeder
       ],
       [
         'menu_id' => 6,
-        'ssm' => 5,
-        'name' => 'logdata',
-        'slug' => 'logdata',
-        'route' => '/logdata',
-        'active' => 'logdata',
-        'routename' => '/logdata',
-        'description' => 'log data'
-      ],
-      [
-        'menu_id' => 6,
-        'ssm' => 6,
+        'ssm' => 4,
         'name' => 'statistik',
         'slug' => 'statistik',
         'route' => '/statistik',

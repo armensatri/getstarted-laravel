@@ -44,6 +44,16 @@
                 active="visitor/banned"
                 menu-name="banned"
               />
+              <x-md-navigation
+                route=""
+                active="visitor/device"
+                menu-name="device"
+              />
+              <x-md-navigation
+                route=""
+                active="visitor/datalog"
+                menu-name="data log"
+              />
             </div>
           </div>
 

@@ -60,9 +60,7 @@ class RoleHasPermissionSeeder extends Seeder
         'visitor.online',
         'visitor.offline',
 
-        'device',
         'access',
-        'logdata',
         'statistik',
 
         'menus.index',
@@ -149,9 +147,7 @@ class RoleHasPermissionSeeder extends Seeder
         'visitor.online',
         'visitor.offline',
 
-        'device',
         'access',
-        'logdata',
         'statistik',
 
         'menus.index',
@@ -238,9 +234,7 @@ class RoleHasPermissionSeeder extends Seeder
         // 'visitor.online',
         // 'visitor.offline',
 
-        // 'device',
         // 'access',
-        // 'logdata',
         // 'statistik',
 
         // 'menus.index',
@@ -327,9 +321,7 @@ class RoleHasPermissionSeeder extends Seeder
         // 'visitor.online',
         // 'visitor.offline',
 
-        // 'device',
         // 'access',
-        // 'logdata',
         // 'statistik',
 
         // 'menus.index',
