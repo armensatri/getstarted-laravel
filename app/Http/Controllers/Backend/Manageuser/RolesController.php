@@ -2,65 +2,91 @@
 
 namespace App\Http\Controllers\Backend\Manageuser;
 
-use App\Http\Controllers\Controller;
-use App\Models\Manageuser\Role;
 use Illuminate\Http\Request;
+use App\Models\Manageuser\Role;
+use App\Http\Controllers\Controller;
+use App\Traits\Controllers\ValidationUnique;
+
+use App\Http\Requests\Manageuser\Role\{
+  RoleSr,
+  RoleUr,
+};
 
 class RolesController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        //
-    }
+  use ValidationUnique;
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
+  /**
+   * Display a listing of the resource.
+   */
+  public function index()
+  {
+    $roles = Role::query()
+      ->select([
+        'id',
+        'sr',
+        'name',
+        'bg',
+        'text',
+        'description',
+        'url',
+        'guard_name'
+      ])
+      ->orderBy('id', 'asc')
+      ->paginate(15)
+      ->withQueryString();
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
+    return view('backend.manageuser.roles.index', [
+      'title' => 'Semua data roles',
+      'roles' => $roles
+    ]);
+  }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Role $role)
-    {
-        //
-    }
+  /**
+   * Show the form for creating a new resource.
+   */
+  public function create()
+  {
+    //
+  }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Role $role)
-    {
-        //
-    }
+  /**
+   * Store a newly created resource in storage.
+   */
+  public function store(RoleSr $request)
+  {
+    //
+  }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Role $role)
-    {
-        //
-    }
+  /**
+   * Display the specified resource.
+   */
+  public function show(Role $role)
+  {
+    //
+  }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Role $role)
-    {
-        //
-    }
+  /**
+   * Show the form for editing the specified resource.
+   */
+  public function edit(Role $role)
+  {
+    //
+  }
+
+  /**
+   * Update the specified resource in storage.
+   */
+  public function update(RoleUr $request, Role $role)
+  {
+    //
+  }
+
+  /**
+   * Remove the specified resource from storage.
+   */
+  public function destroy(Role $role)
+  {
+    //
+  }
 }

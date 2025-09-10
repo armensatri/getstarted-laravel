@@ -4,14 +4,20 @@ namespace App\Http\Controllers\Backend\Manageuser;
 
 use App\Helpers\RandomUrl;
 use Illuminate\Http\Request;
-use App\Models\Manageuser\Role;
-use App\Models\Manageuser\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
 use RealRashid\SweetAlert\Facades\Alert;
 use App\Traits\Controllers\ValidationUnique;
-use App\Http\Requests\Manageuser\User\UserSr;
-use App\Http\Requests\Manageuser\User\UserUr;
+
+use App\Models\Manageuser\{
+  Role,
+  User
+};
+
+use App\Http\Requests\Manageuser\User\{
+  UserSr,
+  UserUr
+};
 
 class UsersController extends Controller
 {
@@ -24,7 +30,14 @@ class UsersController extends Controller
   {
     $users = User::query()
       ->search(request(['search', 'role']))
-      ->select(['id', 'image', 'name', 'email', 'role_id', 'url'])
+      ->select([
+        'id',
+        'image',
+        'name',
+        'email',
+        'role_id',
+        'url'
+      ])
       ->with(['role:id,name,bg,text'])
       ->orderby('id', 'asc')
       ->paginate(15)

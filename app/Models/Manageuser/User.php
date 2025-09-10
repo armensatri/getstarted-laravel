@@ -3,9 +3,12 @@
 namespace App\Models\Manageuser;
 
 use App\Models\Manageuser\Role;
-use App\Traits\Models\HasRandomUrl;
-use App\Traits\Models\HasSearchable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+
+use App\Traits\Models\{
+  HasRandomUrl,
+  HasSearchable
+};
 
 class User extends Authenticatable
 {
