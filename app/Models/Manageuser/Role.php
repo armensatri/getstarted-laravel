@@ -2,14 +2,23 @@
 
 namespace App\Models\Manageuser;
 
-use App\Models\Managemenu\Menu;
-use App\Models\Manageuser\User;
-use App\Models\Managemenu\Submenu;
-use App\Traits\Models\HasRandomUrl;
-use App\Traits\Models\HasSluggable;
-use App\Traits\Models\HasSearchable;
-use App\Models\Manageuser\Permission;
 use Illuminate\Database\Eloquent\Model;
+
+use App\Models\Manageuser\{
+  User,
+  Permission
+};
+
+use App\Models\Managemenu\{
+  Menu,
+  Submenu
+};
+
+use App\Traits\Models\{
+  HasRandomUrl,
+  HasSluggable,
+  HasSearchable,
+};
 
 class Role extends Model
 {
