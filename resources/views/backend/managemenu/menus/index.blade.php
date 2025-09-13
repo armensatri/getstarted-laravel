@@ -23,15 +23,15 @@
             <div class="-m-1.5 overflow-x-auto min-w-full">
               <div class="p-1.5 inline-block xl:max-w-full">
                 <div class="breadcrumb">
-                  @include('backend.sbreadcrumb.permissions.index')
+                  @include('backend.sbreadcrumb.menus.index')
                 </div>
 
                 <div class="overflow-hidden table-border">
                   <div class="grid table-grid">
                     <div class="description">
                       <x-description
-                        table-name="Permissions"
-                        :page-data="$permissions"
+                        table-name="Menus"
+                        :page-data="$menus"
                       />
                     </div>
 
@@ -39,23 +39,23 @@
                       <div class="inline-flex items-center gap-x-2">
                         <div class="refresh">
                           <x-refresh
-                            :route="route('permissions.index')"
+                            :route="route('menus.index')"
                           />
                         </div>
 
                         <div class="search">
-                          <form action="/permissions">
+                          <form action="/menus">
                             <x-search
-                              search="permissions"
-                              placeholder="Search data permissions"
+                              search="menus"
+                              placeholder="Search data menus"
                             />
                           </form>
                         </div>
 
                         <div class="button-create">
                           <x-button-create
-                            :route="route('permissions.create')"
-                            button-name="permission"
+                            :route="route('menus.create')"
+                            button-name="menu"
                           />
                         </div>
                       </div>
@@ -72,10 +72,13 @@
                           name="id"
                         />
                         <x-th
+                          name="sm"
+                        />
+                        <x-th
                           name="name"
                         />
                         <x-th
-                          name="guard"
+                          name="description"
                         />
                         <x-th
                           name="url"
@@ -85,7 +88,7 @@
                     </thead>
 
                     <tbody class="tbody">
-                      @foreach ($permissions as $permission)
+                      @foreach ($menus as $menu)
                         <tr>
                           <td class="h-px whitespace-nowrap">
                             <x-td-var-center
@@ -95,42 +98,48 @@
 
                           <td class="h-px whitespace-nowrap">
                             <x-td-var-center
-                              :var="$permission->id"
-                            />
-                          </td>
-
-                          <td class="h-px whitespace-nowrap">
-                            <x-td-var
-                              :var="$permission->name"
+                              :var="$menu->id"
                             />
                           </td>
 
                           <td class="h-px whitespace-nowrap">
                             <x-td-var-center
-                              :var="$permission->guard_name"
+                              :var="$menu->sm"
                             />
                           </td>
 
                           <td class="h-px whitespace-nowrap">
                             <x-td-var
-                              :var="$permission->url"
+                              :var="$menu->name"
+                            />
+                          </td>
+
+                          <td class="h-px whitespace-nowrap">
+                            <x-td-var
+                              :var="$menu->description"
+                            />
+                          </td>
+
+                          <td class="h-px whitespace-nowrap">
+                            <x-td-var
+                              :var="$menu->url"
                             />
                           </td>
 
                           <td class="size-px whitespace-nowrap">
                             <x-td-action
-                              :id="$permission->id"
+                              :id="$menu->id"
 
                               :show="route(
-                                'permissions.show', $permission->url
+                                'menus.show', $menu->url
                               )"
 
                               :edit="route(
-                                'permissions.edit', $permission->url
+                                'menus.edit', $menu->url
                               )"
 
                               :delete="route(
-                                'permissions.destroy', $permission->url
+                                'menus.destroy', $menu->url
                               )"
                             />
                           </td>
@@ -140,9 +149,9 @@
                   </table>
 
                   <div class="grid table-pagination">
-                    @if ($permissions->lastPage() > 1)
+                    @if ($menus->lastPage() > 1)
                       <x-pagination
-                        :pagination="$permissions"
+                        :pagination="$menus"
                       />
                     @endif
                   </div>

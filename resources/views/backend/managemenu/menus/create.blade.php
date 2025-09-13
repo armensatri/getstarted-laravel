@@ -14,10 +14,10 @@
       <section class="w-full px-3 mt-8 mb-5">
         <div class="w-full">
           <div class="breadcrumb">
-            @include('backend.sbreadcrumb.permissions.create')
+            @include('backend.sbreadcrumb.menus.create')
           </div>
 
-          <form action="{{ route('permissions.store') }}"
+          <form action="{{ route('menus.store') }}"
             method="POST">
             @csrf
 
@@ -25,26 +25,51 @@
               <div class="gap-8 xl:gap-14 max-auto md:flex">
                 <x-input
                   label-for="name"
-                  label-name="Permission..name"
+                  label-name="Menu..name"
                   type="text"
                   id="name"
                   name="name"
                   value-old="name"
                   value-default=""
                   error="name"
-                  placeholder="Masukkan nama permission"
+                  placeholder="Masukkan nama menu"
                 />
 
                 <x-input
                   label-for="slug"
-                  label-name="Permission..slug"
+                  label-name="Menu..slug"
                   type="text"
                   id="slug"
                   name="slug"
                   value-old="slug"
                   value-default=""
                   error="slug"
-                  placeholder="Masukkan slug permission"
+                  placeholder="Masukkan slug menu"
+                />
+              </div>
+
+              <div class="gap-8 xl:gap-14 max-auto md:flex">
+                <x-input
+                  label-for="sm"
+                  label-name="Menu..sm"
+                  type="text"
+                  id="sm"
+                  name="sm"
+                  value-old="sm"
+                  value-default=""
+                  error="sm"
+                  placeholder="Masukkan sorting menu"
+                />
+
+                <x-input-textarea
+                  label-for="description"
+                  label-name="Menu..description"
+                  id="description"
+                  name="description"
+                  value-old="description"
+                  value-default=""
+                  error="description"
+                  placeholder="Masukkan description menu"
                 />
               </div>
 
@@ -65,7 +90,7 @@
     const slug = document.querySelector("#slug");
 
     inputname.addEventListener("change", function () {
-      fetch("/permissions/slug?name=" + inputname.value)
+      fetch("/menus/slug?name=" + inputname.value)
         .then((response) => response.json())
         .then((data) => (slug.value = data.slug));
     });

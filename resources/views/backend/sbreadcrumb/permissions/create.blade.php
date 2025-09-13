@@ -1,11 +1,11 @@
 <ol class="flex items-center gap-[4px] mb-5 ml-2">
   <x-breadcrumb-icon
-    :image="asset('backend/img/menu/roles.jpg')"
+    :image="asset('backend/img/menu/permissions.jpg')"
   />
 
   <x-slash/>
 
-  <x-breadcrumb-name name="roles"/>
+  <x-breadcrumb-name name="permissions"/>
 
   <x-slash/>
 

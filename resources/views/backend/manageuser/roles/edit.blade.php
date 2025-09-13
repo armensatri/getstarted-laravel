@@ -17,9 +17,9 @@
             @include('backend.sbreadcrumb.roles.edit')
           </div>
 
-          <form action="{{ route('roles.store') }}"
-            method="POST"
-            enctype="multipart/form-data">
+          <form action="{{ route('roles.update', $role->url) }}"
+            method="POST">
+            @method('PATCH')
             @csrf
 
             <div class="x-border">
@@ -101,8 +101,8 @@
               </div>
 
               <div class="mt-8">
-                <x-button-create-data
-                  button-name="Create data"
+                <x-button-update-data
+                  button-name="Update data"
                 />
               </div>
             </div>

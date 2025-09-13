@@ -10,15 +10,18 @@ class ShowAction extends Component
 {
   public $name;
   public $edit;
+  public $indexs;
   public $delete;
 
   public function __construct(
     $name,
     $edit,
+    $indexs,
     $delete,
   ) {
     $this->name = $name;
     $this->edit = $edit;
+    $this->indexs = $indexs;
     $this->delete = $delete;
   }
 

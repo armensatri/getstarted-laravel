@@ -4,10 +4,13 @@ namespace App\Models\Managemenu;
 
 use App\Models\Manageuser\Role;
 use App\Models\Managemenu\Submenu;
-use App\Traits\Models\HasRandomUrl;
-use App\Traits\Models\HasSluggable;
-use App\Traits\Models\HasSearchable;
 use Illuminate\Database\Eloquent\Model;
+
+use App\Traits\Models\{
+  HasRandomUrl,
+  HasSluggable,
+  HasSearchable
+};
 
 class Menu extends Model
 {
@@ -34,7 +37,7 @@ class Menu extends Model
 
   public function submenus()
   {
-    return $this->hasMany(Submenu::class, 'menu_id', 'id');
+    return $this->hasMany(Submenu::class);
   }
 
   public function roles()

@@ -88,6 +88,7 @@
 
             <x-show-action
               name="Action"
+              :indexs="route('roles.index')"
               :edit="route('roles.edit', $role->url)"
               :delete="route('roles.destroy', $role->url)"
             />

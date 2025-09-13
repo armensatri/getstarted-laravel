@@ -81,6 +81,9 @@
                           name="description"
                         />
                         <x-th
+                          name="guard"
+                        />
+                        <x-th
                           name="url"
                         />
                         <x-th-action/>
@@ -119,6 +122,12 @@
                           <td class="h-px whitespace-nowrap">
                             <x-td-var
                               :var="$role->description"
+                            />
+                          </td>
+
+                          <td class="h-px whitespace-nowrap">
+                            <x-td-var-center
+                              :var="$role->guard_name"
                             />
                           </td>
 

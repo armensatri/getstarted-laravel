@@ -3,10 +3,13 @@
 namespace App\Models\Manageuser;
 
 use App\Models\Manageuser\Role;
-use App\Traits\Models\HasRandomUrl;
-use App\Traits\Models\HasSluggable;
-use App\Traits\Models\HasSearchable;
 use Illuminate\Database\Eloquent\Model;
+
+use App\Traits\Models\{
+  HasRandomUrl,
+  HasSluggable,
+  HasSearchable
+};
 
 class Permission extends Model
 {

@@ -13,75 +13,47 @@
 
       <section class="w-full px-3 mt-8 mb-5">
         <div class="breadcrumb">
-          @include('backend.sbreadcrumb.users.show')
+          @include('backend.sbreadcrumb.menus.show')
         </div>
 
         <div class="x-border">
           <div class="max-w-xl py-4 mx-auto text-center">
             <div class="text-xl font-semibold tracking-wide text-gray-900 uppercase md:text-2xl">
-              user - {{ $user->name }}
+              menu - {{ $menu->name }}
             </div>
           </div>
 
           <div class="mt-6 space-y-4 sm:mt-8">
             <x-show-var
               name="Id"
-              :var="$user->id"
+              :var="$menu->id"
             />
 
             <x-show-var
               name="Url"
-              :var="$user->url"
+              :var="$menu->url"
             />
 
             <x-show-var
               name="Create"
-              :var="$user->created_at->format('d-m-Y - H:i:s')"
+              :var="$menu->created_at->format('d-m-Y - H:i:s')"
             />
 
             <x-show-var
               name="Update"
-              :var="$user->updated_at->format('d-m-Y - H:i:s')"
+              :var="$menu->updated_at->format('d-m-Y - H:i:s')"
             />
 
             <x-show-var
               name="Publish"
-              :var="$user->created_at->diffForHumans()"
-            />
-
-            <x-show-var
-              name="Name"
-              :var="$user->name"
-            />
-
-            <x-show-var
-              name="Username"
-              :var="$user->username"
-            />
-
-            <x-show-var
-              name="Email"
-              :var="$user->email"
-            />
-
-            <x-show-background
-              name="Role"
-              :bg="$user->role->bg"
-              :text="$user->role->text"
-              :var="$user->role->name"
-            />
-
-            <x-show-image
-              name="Image"
-              :asset="$user->image"
-              asset-default="/image/default.png"
+              :var="$menu->created_at->diffForHumans()"
             />
 
             <x-show-action
               name="Action"
-              :indexs="route('users.index')"
-              :edit="route('users.edit', $user->url)"
-              :delete="route('users.destroy', $user->url)"
+              :indexs="route('menus.index')"
+              :edit="route('menus.edit', $menu->url)"
+              :delete="route('menus.destroy', $menu->url)"
             />
           </div>
         </div>

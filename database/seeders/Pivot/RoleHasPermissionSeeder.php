@@ -50,6 +50,24 @@ class RoleHasPermissionSeeder extends Seeder
         'permissions.edit',
         'permissions.update',
         'permissions.destroy',
+
+        // MENUS
+        'menus.index',
+        'menus.create',
+        'menus.store',
+        'menus.show',
+        'menus.edit',
+        'menus.update',
+        'menus.destroy',
+
+        // SUBMENUS
+        'submenus.index',
+        'submenus.create',
+        'submenus.store',
+        'submenus.show',
+        'submenus.edit',
+        'submenus.update',
+        'submenus.destroy',
       ],
 
       'superadmin' => [],

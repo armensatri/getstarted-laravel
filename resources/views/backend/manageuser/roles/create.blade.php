@@ -17,10 +17,8 @@
             @include('backend.sbreadcrumb.roles.create')
           </div>
 
-          <form action="{{ route('roles.update', $role->url) }}"
-            method="POST"
-            enctype="multipart/form-data">
-            @method('PATCH')
+          <form action="{{ route('roles.store') }}"
+            method="POST">
             @csrf
 
             <div class="x-border">

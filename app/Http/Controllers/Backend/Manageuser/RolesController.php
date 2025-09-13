@@ -25,15 +25,16 @@ class RolesController extends Controller
   public function index()
   {
     $roles = Role::query()
+      ->search(request(['search']))
       ->select([
         'id',
         'sr',
         'name',
         'bg',
         'text',
+        'guard_name',
         'description',
         'url',
-        'guard_name'
       ])
       ->orderBy('id', 'asc')
       ->paginate(15)
@@ -128,7 +129,23 @@ class RolesController extends Controller
    */
   public function destroy(Role $role)
   {
-    //
+    if (in_array($role->name, ['owner', 'superadmin', 'admin'])) {
+      Alert::warning(
+        'Oops...',
+        'Data role! tidak bisa di delete.'
+      );
+
+      return redirect()->route('roles.index');
+    }
+
+    Role::destroy($role->id);
+
+    Alert::success(
+      'success',
+      'Data role! berhasil di delete.'
+    );
+
+    return redirect()->route('roles.index');
   }
 
   /**

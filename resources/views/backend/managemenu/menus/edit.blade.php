@@ -14,43 +14,69 @@
       <section class="w-full px-3 mt-8 mb-5">
         <div class="w-full">
           <div class="breadcrumb">
-            @include('backend.sbreadcrumb.permissions.create')
+            @include('backend.sbreadcrumb.menus.edit')
           </div>
 
-          <form action="{{ route('permissions.store') }}"
+          <form action="{{ route('menus.update', $menu->url) }}"
             method="POST">
+            @method('PATCH')
             @csrf
 
             <div class="x-border">
               <div class="gap-8 xl:gap-14 max-auto md:flex">
                 <x-input
                   label-for="name"
-                  label-name="Permission..name"
+                  label-name="Menu..name"
                   type="text"
                   id="name"
                   name="name"
                   value-old="name"
-                  value-default=""
+                  :value-default="$menu->name"
                   error="name"
-                  placeholder="Masukkan nama permission"
+                  placeholder="Masukkan nama menu"
                 />
 
                 <x-input
                   label-for="slug"
-                  label-name="Permission..slug"
+                  label-name="Menu..slug"
                   type="text"
                   id="slug"
                   name="slug"
                   value-old="slug"
-                  value-default=""
+                  :value-default="$menu->slug"
                   error="slug"
-                  placeholder="Masukkan slug permission"
+                  placeholder="Masukkan slug menu"
+                />
+              </div>
+
+              <div class="gap-8 xl:gap-14 max-auto md:flex">
+                <x-input
+                  label-for="sm"
+                  label-name="Menu..sm"
+                  type="text"
+                  id="sm"
+                  name="sm"
+                  value-old="sm"
+                  :value-default="$menu->sm"
+                  error="sm"
+                  placeholder="Masukkan sorting menu"
+                />
+
+                <x-input-textarea
+                  label-for="description"
+                  label-name="Menu..description"
+                  id="description"
+                  name="description"
+                  value-old="description"
+                  :value-default="$menu->description"
+                  error="description"
+                  placeholder="Masukkan description menu"
                 />
               </div>
 
               <div class="mt-8">
-                <x-button-create-data
-                  button-name="Create data"
+                <x-button-update-data
+                  button-name="Update data"
                 />
               </div>
             </div>
@@ -65,7 +91,7 @@
     const slug = document.querySelector("#slug");
 
     inputname.addEventListener("change", function () {
-      fetch("/permissions/slug?name=" + inputname.value)
+      fetch("/menus/slug?name=" + inputname.value)
         .then((response) => response.json())
         .then((data) => (slug.value = data.slug));
     });
