@@ -109,9 +109,11 @@
                           </td>
 
                           <td class="h-px whitespace-nowrap">
-                            <x-td-var
-                              :var="$menu->name"
-                            />
+                            <div class="flex items-center px-6 py-3 gap-x-3">
+                              <span class="text-[15px] text-green-600">
+                                {{ $menu->name }}
+                              </span>
+                            </div>
                           </td>
 
                           <td class="h-px whitespace-nowrap">

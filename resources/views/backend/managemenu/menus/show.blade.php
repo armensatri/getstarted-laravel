@@ -49,6 +49,26 @@
               :var="$menu->created_at->diffForHumans()"
             />
 
+            <x-show-var
+              name="Sorting"
+              :var="$menu->sm"
+            />
+
+            <x-show-var
+              name="Name"
+              :var="$menu->name"
+            />
+
+            <x-show-var
+              name="Slug"
+              :var="$menu->slug"
+            />
+
+            <x-show-var
+              name="Description"
+              :var="$menu->description"
+            />
+
             <x-show-action
               name="Action"
               :indexs="route('menus.index')"

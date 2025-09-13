@@ -2,12 +2,15 @@
 
 namespace App\Models\Managemenu;
 
-use App\Models\Managemenu\Menu;
 use App\Models\Manageuser\Role;
-use App\Traits\Models\HasRandomUrl;
-use App\Traits\Models\HasSluggable;
-use App\Traits\Models\HasSearchable;
+use App\Models\Managemenu\Menu;
 use Illuminate\Database\Eloquent\Model;
+
+use App\Traits\Models\{
+  HasRandomUrl,
+  HasSluggable,
+  HasSearchable
+};
 
 class Submenu extends Model
 {

@@ -12,10 +12,13 @@ use App\Http\Requests\Managemenu\Menu\{
   MenuSr,
   MenuUr,
 };
+use App\Traits\Controllers\ValidationUnique;
 use RealRashid\SweetAlert\Facades\Alert;
 
 class MenusController extends Controller
 {
+  use ValidationUnique;
+
   /**
    * Display a listing of the resource.
    */
@@ -96,7 +99,26 @@ class MenusController extends Controller
    */
   public function update(MenuUr $request, Menu $menu)
   {
-    // ini lagi ya
+    $dataupdate = $request->validated();
+
+    $this->fieldUnique(
+      $request,
+      $menu,
+      ['name', 'slug'],
+      [
+        'name.unique' => 'Menu..name! sudah terdaptar',
+        'slug.unique'    => 'Menu..slug! sudah terdaptar',
+      ]
+    );
+
+    $menu->update($dataupdate);
+
+    Alert::success(
+      'success',
+      'Data menu! berhasil di update.'
+    );
+
+    return redirect()->route('menus.index');
   }
 
   /**
@@ -104,7 +126,32 @@ class MenusController extends Controller
    */
   public function destroy(Menu $menu)
   {
-    //
+    if (in_array($menu->name, [
+      'owner',
+      'superadmin',
+      'admin',
+      'member',
+      'account',
+      'managedata',
+      'manageuser',
+      'managemenu'
+    ])) {
+      Alert::warning(
+        'Oops...',
+        'Data menu! tidak bisa di delete.'
+      );
+
+      return redirect()->route('menus.index');
+    }
+
+    Menu::destroy($menu->id);
+
+    Alert::success(
+      'success',
+      'Data menu! berhasil di delete.'
+    );
+
+    return redirect()->route('menus.index');
   }
 
   /**
