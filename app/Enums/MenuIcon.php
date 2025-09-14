@@ -7,9 +7,17 @@ class MenuIcon
   public static function get(String $name)
   {
     $icons = [
+      // OWNER
       'owner' => 'dashboard.jpg',
+      'cobaa' => 'data.png',
+
+      // SUPERADMIN
       'superadmin' => 'dashboard.jpg',
+
+      // ADMIN
       'admin' => 'dashboard.jpg',
+
+      // MEMBER
       'member' => 'dashboard.jpg',
 
       // ACCOUNT

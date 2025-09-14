@@ -13,7 +13,7 @@
     class="bg-gray-50 border border-gray-300 text-gray-700
     text-sm rounded-[14px] focus:ring-1 focus:ring-blue-500 focus:border-blue-500 block w-full p-[9px]
     placeholder:tracking-wide
-    placeholder:ps-[13px] tracking-wide">
+    placeholder:ps-[13px] tracking-wide cursor-pointer">
     <option disabled selected>
       {{ $placeholder }}
     </option>

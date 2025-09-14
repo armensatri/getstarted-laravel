@@ -13,7 +13,7 @@ return new class extends Migration
       $table->string('sm');
       $table->string('name')->unique();
       $table->string('slug')->unique();
-      $table->text('description')->nullable();
+      $table->text('description');
       $table->string('url', 7)->unique();
       $table->timestamps();
     });
@@ -27,10 +27,10 @@ return new class extends Migration
       $table->string('ssm');
       $table->string('name')->unique();
       $table->string('slug')->unique();
-      $table->string('route')->nullable();
-      $table->string('active')->nullable();
-      $table->string('routename')->nullable();
-      $table->text('description')->nullable();
+      $table->string('route');
+      $table->string('active');
+      $table->string('routename');
+      $table->text('description');
       $table->string('url', 7)->unique();
       $table->timestamps();
     });

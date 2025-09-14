@@ -2,10 +2,17 @@
 
 namespace App\Http\Controllers\Backend\Managemenu;
 
+use App\Helpers\RandomUrl;
 use Illuminate\Http\Request;
-use App\Models\Managemenu\Submenu;
 use App\Http\Controllers\Controller;
+use RealRashid\SweetAlert\Facades\Alert;
 use App\Traits\Controllers\ValidationUnique;
+use Cviebrock\EloquentSluggable\Services\SlugService;
+
+use App\Models\Managemenu\{
+  Menu,
+  Submenu,
+};
 
 use App\Http\Requests\Managemenu\Submenu\{
   SubmenuSr,
@@ -47,7 +54,14 @@ class SubmenusController extends Controller
    */
   public function create()
   {
-    //
+    $menus = Menu::query()->select('id', 'name')
+      ->orderBy('sm', 'asc')
+      ->get();
+
+    return view('backend.managemenu.submenus.create', [
+      'title' => 'Create data submenu',
+      'menus' => $menus
+    ]);
   }
 
   /**
@@ -55,7 +69,18 @@ class SubmenusController extends Controller
    */
   public function store(SubmenuSr $request)
   {
-    //
+    $datastore = $request->validated();
+
+    $datastore['url'] = RandomUrl::generateUrl();
+
+    Submenu::create($datastore);
+
+    Alert::success(
+      'success',
+      'Data submenu! berhasil di tambahkan.'
+    );
+
+    return redirect()->route('submenus.index');
   }
 
   /**
@@ -63,7 +88,10 @@ class SubmenusController extends Controller
    */
   public function show(Submenu $submenu)
   {
-    //
+    return view('backend.managemenu.submenus.show', [
+      'title' => 'Detail data submenu',
+      'submenu' => $submenu
+    ]);
   }
 
   /**
@@ -88,5 +116,19 @@ class SubmenusController extends Controller
   public function destroy(Submenu $submenu)
   {
     //
+  }
+
+  /**
+   * Generate resource slug otomatis.
+   */
+  public function slug(Request $request)
+  {
+    $slug = SlugService::createSlug(
+      Submenu::class,
+      'slug',
+      $request->name
+    );
+
+    return response()->json(['slug' => $slug]);
   }
 }

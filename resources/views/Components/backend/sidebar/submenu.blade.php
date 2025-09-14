@@ -10,7 +10,7 @@
     @endif
   </span>
 
-  <img src="{{ asset(\App\Enums\MenuIcon::get($subMenu)) }}"
+  <img src="{{ $image }}"
     alt="icon"
     class="w-[16px] h-[16px] ml-2 mr-2"
   />
