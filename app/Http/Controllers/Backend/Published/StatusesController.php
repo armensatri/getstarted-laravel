@@ -2,65 +2,93 @@
 
 namespace App\Http\Controllers\Backend\Published;
 
-use App\Http\Controllers\Controller;
-use App\Models\Published\Status;
 use Illuminate\Http\Request;
+use App\Models\Published\Status;
+use App\Http\Controllers\Controller;
+use App\Traits\Controllers\ValidationUnique;
+
+use App\Http\Requests\Published\Status\{
+  StatusSr,
+  StatusUr,
+};
 
 class StatusesController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        //
-    }
+  use ValidationUnique;
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
+  /**
+   * Display a listing of the resource.
+   */
+  public function index()
+  {
+    $statuses = Status::query()
+      ->search(request(['search']))
+      ->select([
+        'id',
+        'ss',
+        'name',
+        'bg',
+        'text',
+        'url',
+        'description'
+      ])
+      ->orderBy('id', 'asc')
+      ->paginate(15)
+      ->withQueryString();
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
+    return view('backend.published.statuses.index', [
+      'title' => 'Semua data statuses',
+      'statuses' => $statuses
+    ]);
+  }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Status $status)
-    {
-        //
-    }
+  /**
+   * Show the form for creating a new resource.
+   */
+  public function create()
+  {
+    return view('backend.published.statuses.create', [
+      'title' => 'Create data status'
+    ]);
+  }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Status $status)
-    {
-        //
-    }
+  /**
+   * Store a newly created resource in storage.
+   */
+  public function store(StatusSr $request)
+  {
+    $datastore = $request->validated();
+  }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Status $status)
-    {
-        //
-    }
+  /**
+   * Display the specified resource.
+   */
+  public function show(Status $status)
+  {
+    //
+  }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Status $status)
-    {
-        //
-    }
+  /**
+   * Show the form for editing the specified resource.
+   */
+  public function edit(Status $status)
+  {
+    //
+  }
+
+  /**
+   * Update the specified resource in storage.
+   */
+  public function update(StatusUr $request, Status $status)
+  {
+    //
+  }
+
+  /**
+   * Remove the specified resource from storage.
+   */
+  public function destroy(Status $status)
+  {
+    //
+  }
 }

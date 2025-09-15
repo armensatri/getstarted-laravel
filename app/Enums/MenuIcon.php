@@ -9,7 +9,6 @@ class MenuIcon
     $icons = [
       // OWNER
       'owner' => 'dashboard.jpg',
-      'cobaa' => 'data.png',
 
       // SUPERADMIN
       'superadmin' => 'dashboard.jpg',

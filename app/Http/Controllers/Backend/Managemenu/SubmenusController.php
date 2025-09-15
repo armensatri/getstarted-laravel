@@ -99,7 +99,15 @@ class SubmenusController extends Controller
    */
   public function edit(Submenu $submenu)
   {
-    //
+    $menus = Menu::query()->select('id', 'name')
+      ->orderBy('sm', 'asc')
+      ->get();
+
+    return view('backend.managemenu.submenus.edit', [
+      'title' => 'Edit data submenu',
+      'submenu' => $submenu,
+      'menus' => $menus
+    ]);
   }
 
   /**
@@ -107,7 +115,26 @@ class SubmenusController extends Controller
    */
   public function update(SubmenuUr $request, Submenu $submenu)
   {
-    //
+    $dataupdate = $request->validated();
+
+    $this->fieldUnique(
+      $request,
+      $submenu,
+      ['name', 'slug'],
+      [
+        'name.unique' => 'Submenu..name! sudah terdaptar',
+        'slug.unique' => 'Submenu..slug! sudah terdaptar',
+      ]
+    );
+
+    $submenu->update($dataupdate);
+
+    Alert::success(
+      'success',
+      'Data submenu! berhasil di update.'
+    );
+
+    return redirect()->route('submenus.index');
   }
 
   /**
@@ -115,7 +142,23 @@ class SubmenusController extends Controller
    */
   public function destroy(Submenu $submenu)
   {
-    //
+    if (in_array($submenu->name, ['menus', 'submenus'])) {
+      Alert::warning(
+        'Oops...',
+        'Data submenu! tidak bisa di delete.'
+      );
+
+      return redirect()->route('submenus.index');
+    }
+
+    Submenu::destroy($submenu->id);
+
+    Alert::success(
+      'success',
+      'Data submenu! berhasil di delete.'
+    );
+
+    return redirect()->route('submenus.index');
   }
 
   /**

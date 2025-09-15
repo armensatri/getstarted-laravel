@@ -2,10 +2,13 @@
 
 namespace App\Models\Published;
 
-use App\Traits\Models\HasSluggable;
-use App\Traits\Models\HasRandomUrl;
-use App\Traits\Models\HasSearchable;
 use Illuminate\Database\Eloquent\Model;
+
+use App\Traits\Models\{
+  HasSluggable,
+  HasRandomUrl,
+  HasSearchable
+};
 
 class Status extends Model
 {
