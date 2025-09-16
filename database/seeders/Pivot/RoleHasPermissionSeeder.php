@@ -28,8 +28,10 @@ class RoleHasPermissionSeeder extends Seeder
         'owner',
 
         // PERSONAL
+        'personal',
 
         // PERSONAL PUBLIC
+        'personal.public',
 
         // DATA
 
