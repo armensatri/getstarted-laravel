@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Backend\Published;
 
+use App\Helpers\RandomUrl;
 use Illuminate\Http\Request;
 use App\Models\Published\Status;
 use App\Http\Controllers\Controller;
@@ -11,6 +12,8 @@ use App\Http\Requests\Published\Status\{
   StatusSr,
   StatusUr,
 };
+use Cviebrock\EloquentSluggable\Services\SlugService;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class StatusesController extends Controller
 {
@@ -58,6 +61,17 @@ class StatusesController extends Controller
   public function store(StatusSr $request)
   {
     $datastore = $request->validated();
+
+    $datastore['url'] = RandomUrl::generateUrl();
+
+    Status::create($datastore);
+
+    Alert::success(
+      'success',
+      'Data status! berhasil di tambahkan.'
+    );
+
+    return redirect()->route('statuses.index');
   }
 
   /**
@@ -65,7 +79,10 @@ class StatusesController extends Controller
    */
   public function show(Status $status)
   {
-    //
+    return view('backend.published.statuses.show', [
+      'title' => 'Detail data status',
+      'status' => $status
+    ]);
   }
 
   /**
@@ -73,7 +90,10 @@ class StatusesController extends Controller
    */
   public function edit(Status $status)
   {
-    //
+    return view('backend.published.statuses.edit', [
+      'title' => 'Edit data status',
+      'status' => $status
+    ]);
   }
 
   /**
@@ -81,7 +101,26 @@ class StatusesController extends Controller
    */
   public function update(StatusUr $request, Status $status)
   {
-    //
+    $dataupdate = $request->validated();
+
+    $this->fieldUnique(
+      $request,
+      $status,
+      ['name', 'slug'],
+      [
+        'name.unique' => 'Status..name! sudah terdaptar',
+        'slug.unique'    => 'Status..slug! sudah terdaptar',
+      ]
+    );
+
+    $status->update($dataupdate);
+
+    Alert::success(
+      'success',
+      'Data status! berhasil di update.'
+    );
+
+    return redirect()->route('statuses.index');
   }
 
   /**
@@ -89,6 +128,27 @@ class StatusesController extends Controller
    */
   public function destroy(Status $status)
   {
-    //
+    Status::destroy($status->id);
+
+    Alert::success(
+      'success',
+      'Data status! berhasil di delete.'
+    );
+
+    return redirect()->route('statuses.index');
+  }
+
+  /**
+   * Generate resource slug otomatis.
+   */
+  public function slug(Request $request)
+  {
+    $slug = SlugService::createSlug(
+      Status::class,
+      'slug',
+      $request->name
+    );
+
+    return response()->json(['slug' => $slug]);
   }
 }

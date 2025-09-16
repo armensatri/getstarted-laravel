@@ -12,7 +12,9 @@ use App\Http\Controllers\Backend\Dashboard\{
 Route::group(
   [
     'middleware' => [
-      'auth'
+      'auth',
+      'submenu.access',
+      'permission'
     ]
   ],
   function () {

@@ -9,7 +9,7 @@
 
   <x-slash/>
 
-  <x-breadcrumb-name :name="$statuses->slug"/>
+  <x-breadcrumb-name :name="$status->slug"/>
 
   <x-slash/>
 

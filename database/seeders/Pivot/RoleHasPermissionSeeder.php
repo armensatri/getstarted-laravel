@@ -24,6 +24,21 @@ class RoleHasPermissionSeeder extends Seeder
 
     $roleHasPermissions = [
       'owner' => [
+        // DASHBOARD
+        'owner',
+
+        // PERSONAL
+
+        // PERSONAL PUBLIC
+
+        // DATA
+
+        // VISITOR
+
+        // ACCESS
+
+        // STATISTIC
+
         // USERS
         'users.index',
         'users.create',
@@ -79,11 +94,20 @@ class RoleHasPermissionSeeder extends Seeder
         'statuses.destroy',
       ],
 
-      'superadmin' => [],
+      'superadmin' => [
+        // DASHBOARD
+        'superadmin'
+      ],
 
-      'admin' => [],
+      'admin' => [
+        // DASHBOARD
+        'admin'
+      ],
 
-      'member' => [],
+      'member' => [
+        // DASHBOARD
+        'member'
+      ],
     ];
 
     foreach ($roleHasPermissions as $roleName => $permissions) {
