@@ -14,7 +14,7 @@
   <div class="mt-4 -my-2 divide-y divide-gray-500/10">
     <x-mobile-menu-utama
       route=""
-      :img="asset('/frontend/img/utama/home.png')"
+      :image="asset('/frontend/img/utama/home.png')"
       alt="home"
       menu="X-X"
       description="Lorem ipsum dolor sit amet consectetur adipisicing elit"
@@ -24,8 +24,8 @@
 
   <div class="-my-2 divide-y divide-gray-500/10">
     <x-mobile-explore-lainnya
-      route=""
-      :img="asset('/frontend/img/utama/home.png')"
+      route="/home"
+      :image="asset('/frontend/img/utama/home.png')"
       alt="home"
       menu="X-X"
       description="Lorem ipsum dolor sit amet consectetur

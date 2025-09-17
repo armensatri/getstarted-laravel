@@ -43,7 +43,7 @@
               <div class="flex flex-col p-2 h-[334px] overflow-y-scroll">
                 <x-web-menu-utama
                   route=""
-                  :img="asset('/frontend/img/utama/home.png')"
+                  :image="asset('/frontend/img/utama/home.png')"
                   alt="home"
                   menu="X-X"
                   description="Lorem ipsum dolor sit amet consectetur adipisicing elit"
@@ -56,7 +56,7 @@
               <div class="flex flex-col p-2 h-[334px] overflow-y-scroll">
                 <x-web-explore-lainnya
                   route=""
-                  :img="asset('/frontend/img/utama/home.png')"
+                  :image="asset('/frontend/img/utama/home.png')"
                   alt="home"
                   menu="X-X"
                   description="Lorem ipsum dolor sit amet consectetur adipisicing elit"

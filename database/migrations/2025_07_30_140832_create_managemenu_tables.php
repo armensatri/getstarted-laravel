@@ -34,11 +34,30 @@ return new class extends Migration
       $table->string('url', 7)->unique();
       $table->timestamps();
     });
+
+    Schema::create('explores', function (Blueprint $table) {
+      $table->id();
+      // se
+      // name
+      // slug
+      // route
+      // button-name
+      // description
+      // url
+      $table->timestamps();
+    });
+
+    Schema::create('navigations', function (Blueprint $table) {
+      $table->id();
+      $table->timestamps();
+    });
   }
 
   public function down(): void
   {
     Schema::dropIfExists('menus');
     Schema::dropIfExists('submenus');
+    Schema::dropIfExists('explores');
+    Schema::dropIfExists('navigations');
   }
 };

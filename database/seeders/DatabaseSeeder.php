@@ -14,6 +14,8 @@ use Database\Seeders\Manageuser\{
 use Database\Seeders\Managemenu\{
   MenuSeeder,
   SubmenuSeeder,
+  ExploreSeeder,
+  NavigationSeeder,
 };
 
 use Database\Seeders\Pivot\{
@@ -31,6 +33,8 @@ class DatabaseSeeder extends Seeder
       UserSeeder::class,
       MenuSeeder::class,
       SubmenuSeeder::class,
+      ExploreSeeder::class,
+      NavigationSeeder::class,
       RoleHasMenuSeeder::class,
       RoleHasSubmenuSeeder::class,
       PermissionSeeder::class,

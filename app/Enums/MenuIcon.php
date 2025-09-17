@@ -38,6 +38,8 @@ class MenuIcon
       // MANAGEMENU
       'menus' => 'menus.jpg',
       'submenus' => 'submenus.jpg',
+      'explores' => 'explores.png',
+      'navigations' => 'navigations.png',
 
       // PUBLISHED
       'statuses' => 'statuses.jpg',

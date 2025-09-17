@@ -9,7 +9,7 @@ use Illuminate\View\Component;
 class WebExploreLainnya extends Component
 {
   public $route;
-  public $img;
+  public $image;
   public $alt;
   public $menu;
   public $description;
@@ -17,14 +17,14 @@ class WebExploreLainnya extends Component
 
   public function __construct(
     $route,
-    $img,
+    $image,
     $alt,
     $menu,
     $description,
     $buttonName,
   ) {
     $this->route = $route;
-    $this->img = $img;
+    $this->image = $image;
     $this->alt = $alt;
     $this->menu = $menu;
     $this->description = $description;

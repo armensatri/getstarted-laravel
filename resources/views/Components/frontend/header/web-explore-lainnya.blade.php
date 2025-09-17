@@ -6,7 +6,7 @@
 <div class="flex px-5 py-3 rounded-2xl gap-x-4
   hover:bg-gradient-to-r hover:from-red-200 hover:to-green-200">
 
-  <img src="{{ $img }}"
+  <img src="{{ $image }}"
     alt="{{ $alt }}"
     class="size-5"
   />
