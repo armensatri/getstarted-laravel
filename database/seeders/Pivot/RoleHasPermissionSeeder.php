@@ -27,11 +27,11 @@ class RoleHasPermissionSeeder extends Seeder
         // DASHBOARD
         'owner',
 
-        // PERSONAL
-        'personal',
+        // PROFILE
 
         // PERSONAL PUBLIC
-        'personal.public',
+
+        // CHANGE PASSWORD
 
         // DATA
 

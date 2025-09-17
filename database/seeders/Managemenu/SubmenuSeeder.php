@@ -62,13 +62,14 @@ class SubmenuSeeder extends Seeder
       [
         'menu_id' => 5,
         'ssm' => 1,
-        'name' => 'personal',
-        'slug' => 'personal',
-        'route' => '/personal',
-        'active' => 'personal',
-        'routename' => '/personal',
-        'description' => 'personal profile'
+        'name' => 'profile',
+        'slug' => 'profile',
+        'route' => '/profile',
+        'active' => 'profile',
+        'routename' => '/profile',
+        'description' => 'my profile'
       ],
+
       [
         'menu_id' => 5,
         'ssm' => 2,
@@ -77,7 +78,18 @@ class SubmenuSeeder extends Seeder
         'route' => '/personal/public',
         'active' => 'personal/public',
         'routename' => '/personal/public',
-        'description' => 'personal public profile'
+        'description' => 'profile personal public'
+      ],
+
+      [
+        'menu_id' => 5,
+        'ssm' => 3,
+        'name' => 'change password',
+        'slug' => 'change-password',
+        'route' => '/change/password',
+        'active' => 'change/password',
+        'routename' => '/change/password',
+        'description' => 'change password user'
       ],
 
       // ID 6 MANAGEDATA
@@ -86,9 +98,9 @@ class SubmenuSeeder extends Seeder
         'ssm' => 1,
         'name' => 'data',
         'slug' => 'data',
-        'route' => '/data/system',
-        'active' => 'data/system',
-        'routename' => '/data/system',
+        'route' => '/data',
+        'active' => 'data',
+        'routename' => '/data',
         'description' => 'data system'
       ],
       [
@@ -96,9 +108,9 @@ class SubmenuSeeder extends Seeder
         'ssm' => 2,
         'name' => 'visitor',
         'slug' => 'visitor',
-        'route' => '/data/visitor',
-        'active' => 'data/visitor',
-        'routename' => '/data/visitor',
+        'route' => '/visitor',
+        'active' => 'visitor',
+        'routename' => '/visitor',
         'description' => 'data user visitor'
       ],
       [
@@ -106,9 +118,9 @@ class SubmenuSeeder extends Seeder
         'ssm' => 3,
         'name' => 'access',
         'slug' => 'access',
-        'route' => '/access/system',
-        'active' => 'access/system',
-        'routename' => '/access/system',
+        'route' => '/access',
+        'active' => 'access',
+        'routename' => '/access',
         'description' => 'data access system'
       ],
       [
@@ -116,9 +128,9 @@ class SubmenuSeeder extends Seeder
         'ssm' => 4,
         'name' => 'statistic',
         'slug' => 'statistic',
-        'route' => '/statistic/system',
-        'active' => 'statistic/system',
-        'routename' => '/statistic/system',
+        'route' => '/statistic',
+        'active' => 'statistic',
+        'routename' => '/statistic',
         'description' => 'data statistic system'
       ],
 

@@ -20,8 +20,9 @@ class MenuIcon
       'member' => 'dashboard.jpg',
 
       // ACCOUNT
-      'personal' => 'personal.jpg',
+      'profile' => 'profile.jpg',
       'personal public' => 'personal-public.png',
+      'change password' => 'change-password.jpg',
 
       // MANAGEDATA
       'data' => 'data.png',
