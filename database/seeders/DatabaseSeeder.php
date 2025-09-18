@@ -33,13 +33,13 @@ class DatabaseSeeder extends Seeder
       UserSeeder::class,
       MenuSeeder::class,
       SubmenuSeeder::class,
-      ExploreSeeder::class,
-      NavigationSeeder::class,
       RoleHasMenuSeeder::class,
       RoleHasSubmenuSeeder::class,
       PermissionSeeder::class,
       RoleHasPermissionSeeder::class,
       StatusSeeder::class,
+      ExploreSeeder::class,
+      NavigationSeeder::class,
     ]);
   }
 }

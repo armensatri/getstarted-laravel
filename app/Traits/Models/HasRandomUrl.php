@@ -9,7 +9,7 @@ trait HasRandomUrl
 {
   protected static function bootHasRandomUrl()
   {
-    static::saving(function (Model $model) {
+    static::creating(function (Model $model) {
       if (empty($model->url)) {
         do {
           $url = RandomUrl::GenerateUrl();

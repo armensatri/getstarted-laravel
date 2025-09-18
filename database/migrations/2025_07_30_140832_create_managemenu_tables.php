@@ -37,18 +37,25 @@ return new class extends Migration
 
     Schema::create('explores', function (Blueprint $table) {
       $table->id();
-      // se
-      // name
-      // slug
-      // route
-      // button-name
-      // description
-      // url
+      $table->string('se');
+      $table->string('name')->unique();
+      $table->string('slug')->unique();
+      $table->string('route')->nullable();
+      $table->string('button_name');
+      $table->text('description');
+      $table->string('url', 7)->unique();
       $table->timestamps();
     });
 
     Schema::create('navigations', function (Blueprint $table) {
       $table->id();
+      $table->string('sn');
+      $table->string('name')->unique();
+      $table->string('slug')->unique();
+      $table->string('route')->nullable();
+      $table->string('button_name');
+      $table->text('description');
+      $table->string('url', 7)->unique();
       $table->timestamps();
     });
   }

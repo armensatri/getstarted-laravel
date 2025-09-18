@@ -41,27 +41,39 @@
 
             <div class="bg-sky-100 rounded-l-2xl">
               <div class="flex flex-col p-2 h-[334px] overflow-y-scroll">
-                <x-web-menu-utama
-                  route=""
-                  :image="asset('/frontend/img/utama/home.png')"
-                  alt="home"
-                  menu="X-X"
-                  description="Lorem ipsum dolor sit amet consectetur adipisicing elit"
-                  button-name="x-x"
-                />
+                <span class="ms-2.5 mb-6 tracking-wide font-bold text-base
+                  uppercase text-gray-800 text-center mt-4">
+                  menu utama
+                </span>
+
+                @foreach ($navigations as $navigation)
+                  <x-web-menu-utama
+                    :route="$navigation->route"
+                    :image="\App\Enums\NavigationIcon::get($navigation->name)"
+                    :menu="$navigation->name"
+                    :description="$navigation->description"
+                    :button-name="$navigation->button_name"
+                  />
+                @endforeach
               </div>
             </div>
 
             <div class="bg-sky-100 rounded-l-2xl">
               <div class="flex flex-col p-2 h-[334px] overflow-y-scroll">
-                <x-web-explore-lainnya
-                  route=""
-                  :image="asset('/frontend/img/utama/home.png')"
-                  alt="home"
-                  menu="X-X"
-                  description="Lorem ipsum dolor sit amet consectetur adipisicing elit"
-                  button-name="x-x"
-                />
+                <span class="ms-2.5 mb-6 tracking-wide font-bold text-base
+                  uppercase text-gray-800 text-center mt-4">
+                  explore lainnya
+                </span>
+
+                @foreach ($explores as $explore)
+                  <x-web-explore-lainnya
+                    :route="$explore->route"
+                    :image="\App\Enums\ExploreIcon::get($explore->name)"
+                    :menu="$explore->name"
+                    :description="$explore->description"
+                    :button-name="$explore->button_name"
+                  />
+                @endforeach
               </div>
             </div>
           </div>
