@@ -1,19 +1,19 @@
-<div class="flex px-5 py-3 rounded-2xl gap-x-4
+<div class="flex justify-center px-3 py-3 mb-8 rounded-2xl gap-x-3
   hover:bg-gradient-to-r hover:from-red-200 hover:to-green-200">
 
   <img src="{{ $image }}"
     alt="exp"
-    class="size-8 p-[4px] border border-gray-400 rounded-full bg-white"
+    class="size-8 mr-2"
   />
 
   <div class="grow">
-    <div class="inline-flex items-center text-base font-bold
-      text-gray-800 mb-1">
+    <div class="inline-flex items-center text-base font-semibold
+      text-gray-900 mb-1 tracking-wide">
       {{ $menu }}
     </div>
 
-    <div class="text-[15px] lg:line-clamp-2 xl:line-clamp-none
-      font-medium text-gray-600">
+    <div class="text-[15px] mt-2 lg:line-clamp-2 xl:line-clamp-none
+      font-medium text-gray-500">
       {{ $description }}
     </div>
 

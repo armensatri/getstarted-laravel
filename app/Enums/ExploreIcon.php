@@ -7,8 +7,8 @@ class ExploreIcon
   public static function get(string $name): ?string
   {
     $icons = [
-      'app laravel' => 'app-laravel.pngg',
-      'app tailwind' => 'app-tailwind.pngg'
+      'app laravel' => 'app-laravel.png',
+      'app tailwind' => 'app-tailwind.png'
     ];
 
     $key = strtolower(trim($name));

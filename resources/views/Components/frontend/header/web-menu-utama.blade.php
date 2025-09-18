@@ -3,15 +3,15 @@
 
   <img src="{{ $image }}"
     alt="nav"
-    class="size-5"
+    class="size-6"
   />
 
   <div class="grow">
-    <div class="text-base font-bold text-gray-800 mb-1">
+    <div class="text-base font-bold text-gray-900 mb-1">
       {{ $menu }}
     </div>
 
-    <div class="text-[15px] font-medium lg:line-clamp-2 xl:line-clamp-none text-gray-600">
+    <div class="text-[15px] font-medium lg:line-clamp-2 xl:line-clamp-none text-gray-500">
       {{ $description }}
     </div>
 
