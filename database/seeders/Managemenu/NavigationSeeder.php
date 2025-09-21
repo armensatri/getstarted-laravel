@@ -12,11 +12,11 @@ class NavigationSeeder extends Seeder
     $navigations = [
       [
         'sn' => 1,
-        'name' => 'home',
+        'name' => 'Home',
         'slug' => 'home',
         'route' => '/',
         'button_name' => 'home',
-        'description' => "welcome back 'explore' belajar terstruktur dan gratis"
+        'description' => "Welcome back 'explore' belajar terstruktur dan gratis"
       ],
     ];
 

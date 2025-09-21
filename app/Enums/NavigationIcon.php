@@ -7,7 +7,7 @@ class NavigationIcon
   public static function get(string $name): ?string
   {
     $icons = [
-      'home' => 'home.png'
+      'home' => 'Home.png'
     ];
 
     $key = strtolower(trim($name));

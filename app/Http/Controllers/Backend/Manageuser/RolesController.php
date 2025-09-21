@@ -36,7 +36,7 @@ class RolesController extends Controller
         'description',
         'url',
       ])
-      ->orderBy('id', 'asc')
+      ->orderBy('sr', 'asc')
       ->paginate(15)
       ->withQueryString();
 

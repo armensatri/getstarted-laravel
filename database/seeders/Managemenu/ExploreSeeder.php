@@ -12,7 +12,7 @@ class ExploreSeeder extends Seeder
     $explores = [
       [
         'se' => 1,
-        'name' => 'App laravel',
+        'name' => 'App Laravel',
         'slug' => 'app-laravel',
         'route' => 'https://laravel.com',
         'button_name' => 'Laravel',
@@ -21,7 +21,7 @@ class ExploreSeeder extends Seeder
 
       [
         'se' => 2,
-        'name' => 'App tailwind',
+        'name' => 'App Tailwind',
         'slug' => 'app-tailwind',
         'route' => 'https://tailwindcss.com',
         'button_name' => 'Tailwind',

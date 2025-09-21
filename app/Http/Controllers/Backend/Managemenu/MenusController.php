@@ -33,7 +33,7 @@ class MenusController extends Controller
         'description',
         'url'
       ])
-      ->orderBy('id', 'asc')
+      ->orderBy('sm', 'asc')
       ->paginate(15)
       ->withQueryString();
 

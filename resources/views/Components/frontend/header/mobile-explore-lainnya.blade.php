@@ -1,15 +1,8 @@
-<div class="py-2 space-y-2">
-  <div class="block px-3 py-2 text-base font-bold
-    text-gray-800 uppercase">
-    explore lainnya
-  </div>
-</div>
-
 <div class="py-1.5">
   <div class="flex px-5 py-3 rounded-2xl gap-x-4
     hover:bg-gradient-to-r hover:from-red-200 hover:to-green-200">
     <img src="{{ $image }}"
-      alt="{{ $alt }}"
+      alt="exp"
       class="size-5"
     />
 

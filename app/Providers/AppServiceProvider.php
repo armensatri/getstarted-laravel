@@ -22,9 +22,14 @@ class AppServiceProvider extends ServiceProvider
   {
     Model::preventLazyLoading(! app()->isProduction());
 
-    View::composer('frontend.template.header.web', function ($view) {
-      $view->with('explores', Explore::all());
-      $view->with('navigations', Navigation::all());
+    View::composer([
+      'frontend.template.header.web',
+      'frontend.template.header.mobile',
+    ], function ($view) {
+      $view->with([
+        'explores' => Explore::all(),
+        'navigations' => Navigation::all(),
+      ]);
     });
   }
 }

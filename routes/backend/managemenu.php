@@ -16,6 +16,11 @@ Route::group(
   function () {
     Route::get('/menus/slug', [MenusController::class, 'slug']);
     Route::get('/submenus/slug', [SubmenusController::class, 'slug']);
+    Route::get('/explores/slug', [ExploresController::class, 'slug']);
+    Route::get('/navigations/slug', [
+      NavigationsController::class,
+      'slug'
+    ]);
   }
 );
 
