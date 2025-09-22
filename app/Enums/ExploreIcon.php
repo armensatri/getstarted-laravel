@@ -8,7 +8,8 @@ class ExploreIcon
   {
     $icons = [
       'app laravel' => 'app-laravel.png',
-      'app tailwind' => 'app-tailwind.png'
+      'app tailwind' => 'app-tailwind.png',
+      'app flowbite' => 'flowbite.png'
     ];
 
     $key = strtolower(trim($name));

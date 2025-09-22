@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers\Backend\Managemenu;
 
+use App\Helpers\RandomUrl;
 use Illuminate\Http\Request;
 use App\Models\Managemenu\Explore;
 use App\Http\Controllers\Controller;
+use RealRashid\SweetAlert\Facades\Alert;
 use App\Traits\Controllers\ValidationUnique;
+use Cviebrock\EloquentSluggable\Services\SlugService;
 
 use App\Http\Requests\Managemenu\Explore\{
   ExploreSr,
@@ -56,7 +59,18 @@ class ExploresController extends Controller
    */
   public function store(ExploreSr $request)
   {
-    //
+    $datastore = $request->validated();
+
+    $datastore['url'] = RandomUrl::generateUrl();
+
+    Explore::create($datastore);
+
+    Alert::success(
+      'success',
+      'Data explore! berhasil di tambahkan.'
+    );
+
+    return redirect()->route('explores.index');
   }
 
   /**
@@ -89,5 +103,19 @@ class ExploresController extends Controller
   public function destroy(Explore $explore)
   {
     //
+  }
+
+  /**
+   * Generate resource slug otomatis.
+   */
+  public function slug(Request $request)
+  {
+    $slug = SlugService::createSlug(
+      Explore::class,
+      'slug',
+      $request->name
+    );
+
+    return response()->json(['slug' => $slug]);
   }
 }
