@@ -31,6 +31,10 @@ class ExploreUr extends FormRequest
         'max:75',
       ],
 
+      'routee' => [
+        'nullable'
+      ],
+
       'button_name' => [
         'required'
       ],

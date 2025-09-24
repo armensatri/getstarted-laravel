@@ -2,65 +2,104 @@
 
 namespace App\Http\Controllers\Backend\Managemenu;
 
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Managemenu\Navigation;
-use Illuminate\Http\Request;
+use Cviebrock\EloquentSluggable\Services\SlugService;
+
+use App\Http\Requests\Managemenu\Navigation\{
+  NavigationSr,
+  NavigationUr,
+};
 
 class NavigationsController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        //
-    }
+  /**
+   * Display a listing of the resource.
+   */
+  public function index()
+  {
+    $navigations = Navigation::query()
+      ->search(request(['search']))
+      ->select([
+        'id',
+        'sn',
+        'name',
+        'routee',
+        'button_name',
+        'url'
+      ])
+      ->orderBy('sn', 'asc')
+      ->paginate(15)
+      ->withQueryString();
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
+    return view('backend.managemenu.navigations.index', [
+      'title' => 'Semua data navigations',
+      'navigations' => $navigations
+    ]);
+  }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
+  /**
+   * Show the form for creating a new resource.
+   */
+  public function create()
+  {
+    return view('backend.managemenu.navigations.create', [
+      'title' => 'Create data navigation'
+    ]);
+  }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Navigation $navigation)
-    {
-        //
-    }
+  /**
+   * Store a newly created resource in storage.
+   */
+  public function store(NavigationSr $request)
+  {
+    $datastore = $request->validated();
+  }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Navigation $navigation)
-    {
-        //
-    }
+  /**
+   * Display the specified resource.
+   */
+  public function show(Navigation $navigation)
+  {
+    //
+  }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Navigation $navigation)
-    {
-        //
-    }
+  /**
+   * Show the form for editing the specified resource.
+   */
+  public function edit(Navigation $navigation)
+  {
+    //
+  }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Navigation $navigation)
-    {
-        //
-    }
+  /**
+   * Update the specified resource in storage.
+   */
+  public function update(NavigationUr $request, Navigation $navigation)
+  {
+    //
+  }
+
+  /**
+   * Remove the specified resource from storage.
+   */
+  public function destroy(Navigation $navigation)
+  {
+    //
+  }
+
+  /**
+   * Generate resource slug otomatis.
+   */
+  public function slug(Request $request)
+  {
+    $slug = SlugService::createSlug(
+      Navigation::class,
+      'slug',
+      $request->name
+    );
+
+    return response()->json(['slug' => $slug]);
+  }
 }

@@ -127,7 +127,14 @@ class ExploresController extends Controller
    */
   public function destroy(Explore $explore)
   {
-    //
+    Explore::destroy($explore->id);
+
+    Alert::success(
+      'success',
+      'Data explore! berhasil di delete.'
+    );
+
+    return redirect()->route('explores.index');
   }
 
   /**

@@ -49,6 +49,7 @@ class UserSr extends FormRequest
       ],
 
       'image' => [
+        'nullable',
         'image',
         'max:2048',
         'mimes:png,jpg,jpeg,webp'

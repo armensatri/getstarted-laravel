@@ -33,6 +33,10 @@ class ExploreSr extends FormRequest
         'unique:explores,slug'
       ],
 
+      'routee' => [
+        'nullable'
+      ],
+
       'button_name' => [
         'required'
       ],
