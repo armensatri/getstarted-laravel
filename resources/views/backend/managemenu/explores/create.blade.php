@@ -62,14 +62,14 @@
                 />
 
                 <x-input
-                  label-for="route"
+                  label-for="routee"
                   label-name="Explore..route"
                   type="text"
-                  id="route"
-                  name="route"
-                  value-old="route"
+                  id="routee"
+                  name="routee"
+                  value-old="routee"
                   value-default=""
-                  error="route"
+                  error="routee"
                   placeholder="Masukkan route explore"
                 />
               </div>

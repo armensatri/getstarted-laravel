@@ -20,7 +20,7 @@ class Explore extends Model
     'se',
     'name',
     'slug',
-    'route',
+    'routee',
     'button_name',
     'description',
     'url'

@@ -14,19 +14,10 @@ class ExploreSeeder extends Seeder
         'se' => 1,
         'name' => 'App Laravel',
         'slug' => 'app-laravel',
-        'route' => 'https://laravel.com',
+        'routee' => 'https://laravel.com',
         'button_name' => 'Laravel',
         'description' => 'Laravel php framework dengan syntax elegan dan powerfull'
       ],
-
-      [
-        'se' => 2,
-        'name' => 'App Tailwind',
-        'slug' => 'app-tailwind',
-        'route' => 'https://tailwindcss.com',
-        'button_name' => 'Tailwind',
-        'description' => 'Tailwind utility first css framework cepat fleksibel dan modern'
-      ]
     ];
 
     foreach ($explores as $explore) {

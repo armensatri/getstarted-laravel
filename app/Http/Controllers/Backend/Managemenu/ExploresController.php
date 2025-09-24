@@ -30,7 +30,7 @@ class ExploresController extends Controller
         'id',
         'se',
         'name',
-        'route',
+        'routee',
         'button_name',
         'url'
       ])
@@ -78,7 +78,10 @@ class ExploresController extends Controller
    */
   public function show(Explore $explore)
   {
-    //
+    return view('backend.managemenu.explores.show', [
+      'title' => 'Detail data explore',
+      'explore' => $explore
+    ]);
   }
 
   /**
@@ -86,7 +89,10 @@ class ExploresController extends Controller
    */
   public function edit(Explore $explore)
   {
-    //
+    return view('backend.managemenu.explores.edit', [
+      'title' => 'Edit data explore',
+      'explore' => $explore
+    ]);
   }
 
   /**
@@ -94,7 +100,26 @@ class ExploresController extends Controller
    */
   public function update(ExploreUr $request, Explore $explore)
   {
-    //
+    $dataupdate = $request->validated();
+
+    $this->fieldUnique(
+      $request,
+      $explore,
+      ['name', 'slug'],
+      [
+        'name.unique' => 'Explore..name! sudah terdaptar',
+        'slug.unique' => 'Explore..slug! sudah terdaptar',
+      ]
+    );
+
+    $explore->update($dataupdate);
+
+    Alert::success(
+      'success',
+      'Data explore! berhasil di update.'
+    );
+
+    return redirect()->route('explores.index');
   }
 
   /**

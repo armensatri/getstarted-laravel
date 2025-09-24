@@ -119,7 +119,7 @@
 
                           <td class="h-px whitespace-nowrap">
                             <x-td-var
-                              :var="$explore->route"
+                              :var="$explore->routee"
                             />
                           </td>
 

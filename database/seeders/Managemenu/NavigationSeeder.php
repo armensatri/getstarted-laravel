@@ -14,7 +14,7 @@ class NavigationSeeder extends Seeder
         'sn' => 1,
         'name' => 'Home',
         'slug' => 'home',
-        'route' => '/',
+        'routee' => '/',
         'button_name' => 'home',
         'description' => "Welcome back 'explore' belajar terstruktur dan gratis"
       ],

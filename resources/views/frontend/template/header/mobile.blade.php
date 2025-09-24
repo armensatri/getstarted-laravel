@@ -20,7 +20,7 @@
 
     @foreach ($navigations as $navigation)
       <x-mobile-menu-utama
-        :route="$navigation->route"
+        :route="$navigation->routee"
         :image="\App\Enums\NavigationIcon::get($navigation->name)"
         :menu="$navigation->name"
         :description="$navigation->description"
@@ -39,7 +39,7 @@
 
     @foreach ($explores as $explore)
       <x-mobile-explore-lainnya
-        :route="$explore->route"
+        :route="$explore->routee"
         :image="\App\Enums\ExploreIcon::get($explore->name)"
         :menu="$explore->name"
         :description="$explore->description"

@@ -20,7 +20,7 @@ class Navigation extends Model
     'sn',
     'name',
     'slug',
-    'route',
+    'routee',
     'button_name',
     'description',
     'url'
