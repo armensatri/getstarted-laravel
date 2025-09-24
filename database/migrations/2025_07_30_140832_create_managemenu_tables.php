@@ -40,7 +40,7 @@ return new class extends Migration
       $table->string('se');
       $table->string('name')->unique();
       $table->string('slug')->unique();
-      $table->string('route')->nullable();
+      $table->string('route')->unique();
       $table->string('button_name');
       $table->text('description');
       $table->string('url', 7)->unique();
@@ -52,7 +52,7 @@ return new class extends Migration
       $table->string('sn');
       $table->string('name')->unique();
       $table->string('slug')->unique();
-      $table->string('route')->nullable();
+      $table->string('route')->unique();
       $table->string('button_name');
       $table->text('description');
       $table->string('url', 7)->unique();
