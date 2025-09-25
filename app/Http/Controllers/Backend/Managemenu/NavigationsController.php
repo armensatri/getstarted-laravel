@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Managemenu\Navigation;
 use RealRashid\SweetAlert\Facades\Alert;
+use App\Traits\Controllers\ValidationUnique;
 use Cviebrock\EloquentSluggable\Services\SlugService;
 
 use App\Http\Requests\Managemenu\Navigation\{
@@ -16,6 +17,8 @@ use App\Http\Requests\Managemenu\Navigation\{
 
 class NavigationsController extends Controller
 {
+  use ValidationUnique;
+
   /**
    * Display a listing of the resource.
    */
@@ -75,7 +78,10 @@ class NavigationsController extends Controller
    */
   public function show(Navigation $navigation)
   {
-    return view('use');
+    return view('backend.managemenu.navigations.show', [
+      'title' => 'Detail data navigation',
+      'navigation' => $navigation
+    ]);
   }
 
   /**
@@ -83,7 +89,10 @@ class NavigationsController extends Controller
    */
   public function edit(Navigation $navigation)
   {
-    //
+    return view('backend.managemenu.navigations.edit', [
+      'title' => 'Edit data navigation',
+      'navigation' => $navigation
+    ]);
   }
 
   /**
@@ -91,7 +100,26 @@ class NavigationsController extends Controller
    */
   public function update(NavigationUr $request, Navigation $navigation)
   {
-    //
+    $dataupdate = $request->validated();
+
+    $this->fieldUnique(
+      $request,
+      $navigation,
+      ['name', 'slug'],
+      [
+        'name.unique' => 'Navigation..name! sudah terdaptar',
+        'slug.unique' => 'Navigation..slug! sudah terdaptar',
+      ]
+    );
+
+    $navigation->update($dataupdate);
+
+    Alert::success(
+      'success',
+      'Data navigation! berhasil di update.'
+    );
+
+    return redirect()->route('navigations.index');
   }
 
   /**
@@ -99,7 +127,14 @@ class NavigationsController extends Controller
    */
   public function destroy(Navigation $navigation)
   {
-    //
+    Navigation::destroy($navigation->id);
+
+    Alert::success(
+      'success',
+      'Data navigation! berhasil di delete.'
+    );
+
+    return redirect()->route('navigation.index');
   }
 
   /**
