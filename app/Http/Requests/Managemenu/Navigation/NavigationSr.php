@@ -53,22 +53,22 @@ class NavigationSr extends FormRequest
   public function messages()
   {
     return [
-      'sn.required' => 'Navigation..sorting!',
-      'sn.numeric' => 'Navigation..sorting!',
+      'sn.required' => 'Navigation..sorting! harus di isi',
+      'sn.numeric' => 'Navigation..sorting! hanya boleh angka',
 
-      'name.required' => 'Navigation..name!',
-      'name.min' => 'Navigation..name!',
-      'name.max' => 'Navigation..name!',
-      'name.unique' => 'Navigation..name!',
+      'name.required' => 'Navigation..name! harus di isi',
+      'name.min' => 'Navigation..name! minimal 3 karakter',
+      'name.max' => 'Navigation..name! maksimal 75 karakter',
+      'name.unique' => 'Navigation..name! sudah terdaptar',
 
-      'slug.required' => 'Navigation..slug!',
-      'slug.min' => 'Navigation..slug!',
-      'slug.max' => 'Navigation..slug!',
-      'slug.unique' => 'Navigation..slug!',
+      'slug.required' => 'Navigation..slug! harus di isi',
+      'slug.min' => 'Navigation..slug! minimal 3 karakter',
+      'slug.max' => 'Navigation..slug! maksimal 75 karakter',
+      'slug.unique' => 'Navigation..slug! sudah terdaptar',
 
-      'button_name.required' => 'Navigation..button!',
+      'button_name.required' => 'Navigation..button! harus di isi',
 
-      'name.' => 'Navigation..name!',
+      'description.required' => 'Navigation..description! harus di isi',
     ];
   }
 }

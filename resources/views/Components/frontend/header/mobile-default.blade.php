@@ -1,6 +1,6 @@
 <div class="flex flex-col p-2">
-  <span class="ms-2.5 mb-4 tracking-wide font-bold text-base
-    uppercase text-gray-800 text-center mt-4">
+  <span class="ms-2.5 mb-4 tracking-wider font-bold text-base
+    uppercase text-green-700 text-center mt-4">
     {{ $namaApp }}
   </span>
 

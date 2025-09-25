@@ -6,7 +6,7 @@
       aria-haspopup="menu"
       aria-expanded="false"
       aria-label="Dropdown"
-      class="inline-flex items-center px-1 py-0.5 text-sm font-medium text-slate-900 cursor-pointer hs-dropdown-toggle
+      class="inline-flex items-center px-[6px] py-0.5 text-sm font-medium text-slate-900 cursor-pointer hs-dropdown-toggle
       hover:text-blue-600">
       <i class="bi bi-gear-fill"></i>
     </div>

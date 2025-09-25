@@ -3,7 +3,7 @@
 
   <img src="{{ $image }}"
     alt="exp"
-    class="size-8 mr-2"
+    class="size-5"
   />
 
   <div class="grow">
@@ -12,8 +12,8 @@
       {{ $menu }}
     </div>
 
-    <div class="text-[15px] mt-2 lg:line-clamp-2 xl:line-clamp-none
-      font-medium text-gray-500">
+    <div class="text-[15px] mt-1 lg:line-clamp-2 xl:line-clamp-none
+      font-medium text-gray-600">
       {{ $description }}
     </div>
 

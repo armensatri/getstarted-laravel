@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers\Backend\Managemenu;
 
+use App\Helpers\RandomUrl;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Managemenu\Navigation;
+use RealRashid\SweetAlert\Facades\Alert;
 use Cviebrock\EloquentSluggable\Services\SlugService;
 
 use App\Http\Requests\Managemenu\Navigation\{
@@ -55,6 +57,17 @@ class NavigationsController extends Controller
   public function store(NavigationSr $request)
   {
     $datastore = $request->validated();
+
+    $datastore['url'] = RandomUrl::generateUrl();
+
+    Navigation::create($datastore);
+
+    Alert::success(
+      'success',
+      'Data navigation! berhasil di tambahkan.'
+    );
+
+    return redirect()->route('navigations.index');
   }
 
   /**
@@ -62,7 +75,7 @@ class NavigationsController extends Controller
    */
   public function show(Navigation $navigation)
   {
-    //
+    return view('use');
   }
 
   /**

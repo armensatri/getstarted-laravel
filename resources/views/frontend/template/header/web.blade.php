@@ -41,8 +41,8 @@
 
             <div class="bg-sky-100 rounded-l-2xl">
               <div class="flex flex-col p-2 h-[334px] overflow-y-scroll">
-                <span class="ms-2.5 mb-6 tracking-wide font-bold text-base
-                  uppercase text-gray-800 text-center mt-4">
+                <span class="ms-2.5 mb-6 tracking-wider font-bold text-base
+                  uppercase text-green-700 text-center mt-4">
                   menu utama
                 </span>
 
@@ -60,8 +60,8 @@
 
             <div class="bg-sky-100 rounded-l-2xl">
               <div class="flex flex-col p-2 h-[334px] overflow-y-scroll">
-                <span class="ms-2.5 mb-6 tracking-wide font-bold text-base
-                  uppercase text-gray-800 text-center mt-4">
+                <span class="ms-2.5 mb-6 tracking-wider font-bold text-base
+                  uppercase text-green-700 text-center mt-4">
                   explore lainnya
                 </span>
 

@@ -13,7 +13,7 @@
 
   <div class="mt-4 -my-2">
     <div class="py-2 space-y-2">
-      <div class="block px-3 py-2 text-base font-bold text-gray-800 uppercase">
+      <div class="block px-3 py-2 text-base font-bold text-green-700 uppercase tracking-wider">
         menu utama
       </div>
     </div>
@@ -30,9 +30,9 @@
   </div>
 
   <div class="-my-2">
-    <div class="py-2 space-y-2">
+    <div class="py-2 mt-4 space-y-2">
       <div class="block px-3 py-2 text-base font-bold
-        text-gray-800 uppercase">
+        text-green-700 uppercase tracking-wider">
         explore lainnya
       </div>
     </div>
