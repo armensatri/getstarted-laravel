@@ -134,7 +134,7 @@ class NavigationsController extends Controller
       'Data navigation! berhasil di delete.'
     );
 
-    return redirect()->route('navigation.index');
+    return redirect()->route('navigations.index');
   }
 
   /**

@@ -34,12 +34,16 @@ class RoleHasPermissionSeeder extends Seeder
         // CHANGE PASSWORD
 
         // DATA
+        'data',
 
         // VISITOR
+        'visitor',
 
         // ACCESS
+        'access',
 
         // STATISTIC
+        'statistic',
 
         // USERS
         'users.index',

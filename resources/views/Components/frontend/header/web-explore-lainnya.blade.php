@@ -25,7 +25,7 @@
           : 'bg-red-200 text-black hover:bg-red-700
           hover:text-white pointer-events-none'
       }}">
-      <a href="{{ $route ?? '' }}">
+      <a href="{{ $route ?? '' }}" target="_blank">
         {{ $buttonName }}
         @if ($route)
           <i class="ml-1 bi bi-box-arrow-up-right text-xs"></i>
