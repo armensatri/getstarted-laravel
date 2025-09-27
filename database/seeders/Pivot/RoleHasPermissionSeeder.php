@@ -38,6 +38,10 @@ class RoleHasPermissionSeeder extends Seeder
 
         // VISITOR
         'visitor',
+        'visitor.online',
+        'visitor.banned',
+        'visitor.offline',
+        'visitor.device',
 
         // ACCESS
         'access',
