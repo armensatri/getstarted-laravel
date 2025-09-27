@@ -18,18 +18,12 @@
 
         <div class="x-border">
           <div class="flex flex-col items-center text-center">
-            <img src="/image/default.png"
-              alt="data"
-              class="w-24 h-24 border-4 border-green-500 rounded-full"
+            <x-md-header
+              :image="asset('/image/default.png')"
+              alt="visitor"
+              title="Data count"
+              description="Jumlah data dalam system"
             />
-
-            <div class="mt-2 text-xl font-semibold">
-              Data count
-            </div>
-
-            <div class="text-base mt-1.5 text-gray-600">
-              Jumlah data dalam system
-            </div>
           </div>
 
           <div class="w-full mt-12 border-b border-gray-200"></div>
@@ -39,56 +33,77 @@
               <div class="content">
                 <div class="max-w-screen-xl px-4 mx-auto text-center">
                   <div class="grid gap-8 lg:gap-16 sm:grid-cols-2 xl:grid-cols-3">
-                    {{-- <x-card-count
+                    <x-data-card-count
                       hover="users"
                       :route="route('users.index')"
                       img="/backend/img/menu/users.jpg"
                       alt="users"
                       data-name="Data users"
                       :data-count="$users"
-                    /> --}}
-                    <div class="p-3 text-center border border-gray-300 rounded-3xl bg-slate-50">
-                      <div class="flex justify-end">
-                        <div id="dropdownHoverButton-users"
-                          data-dropdown-toggle="dropdownHover-users" data-dropdown-trigger="hover"
-                          class="inline-flex items-center px-1 text-base font-medium text-center text-black border rounded-full hover:border-gray-400 hover:bg-gray-200 hover:cursor-pointer">
-                          <i class="bi bi-three-dots-vertical"></i>
-                        </div>
+                    />
 
-                        <div id="dropdownHover-users"
-                          class="z-10 hidden p-3 mt-2 space-y-2 border border-gray-400 divide-y divide-gray-100 shadow-sm w-28 bg-slate-100 dark:bg-gray-700 rounded-2xl">
-                          <span class="block mb-2.5 text-xs font-medium text-gray-600 uppercase">
-                            Action
-                          </span>
+                    <x-data-card-count
+                      hover="roles"
+                      :route="route('roles.index')"
+                      img="/backend/img/menu/roles.jpg"
+                      alt="roles"
+                      data-name="Data roles"
+                      :data-count="$roles"
+                    />
 
-                          <div class="flex items-center justify-center gap-2">
-                            <div>
-                              <a href="{{ route('users.index') }}"
-                                class="inline-flex items-center justify-center px-8 py-1.5 bg-green-700 rounded-xl hover:bg-green-800">
-                                <i class="text-base text-white bi bi-eye"></i>
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
+                    <x-data-card-count
+                      hover="permissions"
+                      :route="route('permissions.index')"
+                      img="/backend/img/menu/permissions.jpg"
+                      alt="permissions"
+                      data-name="Data permissions"
+                      :data-count="$permissions"
+                    />
 
-                      <div class="flex items-center justify-center">
-                        <div class="flex items-center justify-center w-12 h-12 p-1 border border-gray-400 rounded-full">
-                          <img src="backend/img/menu/users.jpg"
-                            class="w-8 h-8 rounded-full"
-                            alt="users"
-                          />
-                        </div>
-                      </div>
+                    <x-data-card-count
+                      hover="menus"
+                      :route="route('menus.index')"
+                      img="/backend/img/menu/menus.jpg"
+                      alt="menus"
+                      data-name="Data menus"
+                      :data-count="$menus"
+                    />
 
-                      <div class="mt-2 mb-1 text-lg font-semibold tracking-wide text-gray-800">
-                        Data users
-                      </div>
+                    <x-data-card-count
+                      hover="submenus"
+                      :route="route('submenus.index')"
+                      img="/backend/img/menu/submenus.jpg"
+                      alt="submenus"
+                      data-name="Data submenus"
+                      :data-count="$submenus"
+                    />
 
-                      <div class="mt-2 mb-2 text-base font-medium text-gray-600">
-                        {{ $users }}
-                      </div>
-                    </div>
+                    <x-data-card-count
+                      hover="explores"
+                      :route="route('explores.index')"
+                      img="/backend/img/menu/explores.png"
+                      alt="explores"
+                      data-name="Data explores"
+                      :data-count="$explores"
+                    />
+
+                    <x-data-card-count
+                      hover="navigations"
+                      :route="route('navigations.index')"
+                      img="/backend/img/menu/navigations.png"
+                      alt="navigations"
+                      data-name="Data navigations"
+                      :data-count="$navigations"
+                    />
+
+                    <x-data-card-count
+                      hover="statuses"
+                      :route="route('statuses.index')"
+                      img="/backend/img/menu/statuses.jpg"
+                      alt="statuses"
+                      data-name="Data statuses"
+                      :data-count="$statuses"
+                    />
                   </div>
                 </div>
               </div>

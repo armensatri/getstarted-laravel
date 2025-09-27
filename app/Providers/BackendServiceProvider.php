@@ -4,7 +4,10 @@ namespace App\Providers;
 
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
+use App\View\Components\Backend\Data\DataCardCount;
+use App\View\Components\Backend\Managedata\MdHeader;
 use App\View\Components\Backend\Pagination\Pagination;
+use App\View\Components\Backend\Visitor\VisitorNavigation;
 
 use App\View\Components\Backend\Sidebar\{
   Menu,
@@ -53,6 +56,7 @@ use App\View\Components\Backend\Show\{
   ShowBackground,
   ShowImage,
 };
+
 
 class BackendServiceProvider extends ServiceProvider
 {
@@ -106,5 +110,14 @@ class BackendServiceProvider extends ServiceProvider
     Blade::component('show-background', ShowBackground::class);
     Blade::component('show-image', ShowImage::class);
     Blade::component('show-action', ShowAction::class);
+
+    // MANAGEDATA
+    Blade::component('md-header', MdHeader::class);
+
+    // DATA
+    Blade::component('data-card-count', DataCardCount::class);
+
+    // VISITOR
+    Blade::component('visitor-navigation', VisitorNavigation::class);
   }
 }

@@ -30,7 +30,7 @@ class DataController extends Controller
       'permissions' => Permission::count(),
       'menus' => Menu::count(),
       'submenus' => Submenu::count(),
-      'explore' => Explore::count(),
+      'explores' => Explore::count(),
       'navigations' => Navigation::count(),
       'statuses' => Status::count()
     ]);
