@@ -14,14 +14,16 @@ class VisitorController extends Controller
       ->search(request(['search', 'role']))
       ->select([
         'id',
-        'image',
         'name',
-        'email',
         'role_id',
+        'status_on_of',
+        'last_seen',
+        'status',
         'url'
       ])
       ->with(['role:id,name,bg,text'])
       ->orderby('id', 'asc')
+      ->where('status', 1)
       ->paginate(15)
       ->withQueryString();
 
@@ -31,24 +33,25 @@ class VisitorController extends Controller
     ]);
   }
 
-  public function online()
-  {
-    return view('backend.managedata.visitor.online', [
-      'title' => 'Visitor online'
-    ]);
-  }
-
   public function banned()
   {
-    return view('backend.managedata.visitor.banned', [
-      'title' => 'Visitor banned'
-    ]);
-  }
+    $users = User::query()
+      ->search(request(['search', 'role']))
+      ->select([
+        'id',
+        'name',
+        'role_id',
+        'status',
+      ])
+      ->with(['role:id,name,bg,text'])
+      ->orderby('id', 'asc')
+      ->where('status', 0)
+      ->paginate(15)
+      ->withQueryString();
 
-  public function offline()
-  {
-    return view('backend.managedata.visitor.offline', [
-      'title' => 'Visitor offline'
+    return view('backend.managedata.visitor.banned', [
+      'title' => 'Visitor banned',
+      'users' => $users
     ]);
   }
 

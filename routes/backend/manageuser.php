@@ -11,6 +11,21 @@ use App\Http\Controllers\Backend\Manageuser\{
 Route::group(
   [
     'middleware' => [
+      'auth',
+      'permission'
+    ]
+  ],
+  function () {
+    Route::get('/users/{id}/{status}', [
+      UsersController::class,
+      'changestatus'
+    ])->name('users.change.status');
+  }
+);
+
+Route::group(
+  [
+    'middleware' => [
       'auth'
     ]
   ],

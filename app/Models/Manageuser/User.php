@@ -25,6 +25,7 @@ class User extends Authenticatable
     'role_id',
     'status_on_of',
     'last_seen',
+    'status',
     'url'
   ];
 
@@ -66,6 +67,18 @@ class User extends Authenticatable
       'bg' => "bg-{$color}-200",
       'text' => "text-{$color}-800",
       'statusOnOf' => $online ? 'online' : 'offline',
+    ];
+  }
+
+  public function status()
+  {
+    $active = $this->status;
+    $color = $active ? 'green' : 'red';
+
+    return [
+      'bg' => "bg-{$color}-200",
+      'text' => "text-{$color}-800",
+      'status' => $active ? 'active' : 'banned',
     ];
   }
 }

@@ -21,6 +21,7 @@ return new class extends Migration
         ->cascadeOnUpdate();
       $table->boolean('status_on_of')->default(0);
       $table->timestamp('last_seen')->nullable();
+      $table->boolean('status')->default(true)->after('email');
       $table->string('url', 7)->unique();
       $table->timestamps();
     });

@@ -12,9 +12,7 @@ Route::middleware(
   VisitorController::class
 )->group(
   function () {
-    Route::get('/online', 'online')->name('online');
     Route::get('/banned', 'banned')->name('banned');
-    Route::get('/offline', 'offline')->name('offline');
     Route::get('/device', 'device')->name('device');
   }
 );

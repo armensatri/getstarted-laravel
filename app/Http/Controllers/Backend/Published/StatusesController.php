@@ -7,13 +7,13 @@ use Illuminate\Http\Request;
 use App\Models\Published\Status;
 use App\Http\Controllers\Controller;
 use App\Traits\Controllers\ValidationUnique;
+use RealRashid\SweetAlert\Facades\Alert;
+use Cviebrock\EloquentSluggable\Services\SlugService;
 
 use App\Http\Requests\Published\Status\{
   StatusSr,
   StatusUr,
 };
-use Cviebrock\EloquentSluggable\Services\SlugService;
-use RealRashid\SweetAlert\Facades\Alert;
 
 class StatusesController extends Controller
 {

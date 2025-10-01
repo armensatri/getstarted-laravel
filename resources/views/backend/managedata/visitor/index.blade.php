@@ -11,6 +11,12 @@
         </div>
       </section>
 
+      <div class="alert">
+        @if (session()->has('alert'))
+          @include('sweetalert::alert')
+        @endif
+      </div>
+
       <section class="w-full px-3 mt-8 mb-5">
         <div class="breadcrumb">
           @include('backend.sbreadcrumb.visitor.index')
@@ -70,17 +76,22 @@
                                       name="id"
                                     />
                                     <x-th
-                                      name="image"
-                                    />
-                                    <x-th
                                       name="name"
                                     />
                                     <x-th
                                       name="role"
                                     />
                                     <x-th
-                                      name="email"
+                                      name="auth"
                                     />
+                                    <x-th
+                                      name="status"
+                                    />
+                                    <x-th
+                                      name="lastseen"
+                                    />
+                                    <x-th-action/>
+                                    <x-th-action/>
                                   </tr>
                                 </thead>
 
@@ -99,13 +110,6 @@
                                         />
                                       </td>
 
-                                      <td class="size-px whitespace-nowrap">
-                                        <x-td-image-hover
-                                          :asset="$user->image"
-                                          asset-default="/image/default.png"
-                                        />
-                                      </td>
-
                                       <td class="h-px whitespace-nowrap">
                                         <x-td-var
                                           :var="$user->name"
@@ -121,8 +125,49 @@
                                       </td>
 
                                       <td class="h-px whitespace-nowrap">
+                                        <div class="flex justify-center items-center">
+                                          <x-td-var-bg
+                                            :bg="$user->statusOnOf()['bg']"
+                                            :text="$user->statusOnOf()['text']"
+                                            :var="$user->statusOnOf()['statusOnOf']"
+                                          />
+                                        </div>
+                                      </td>
+                                      <td class="h-px whitespace-nowrap">
+                                        <div class="flex justify-center items-center">
+                                          <x-td-var-bg
+                                            :bg="$user->status()['bg']"
+                                            :text="$user->status()['text']"
+                                            :var="$user->status()['status']"
+                                          />
+                                        </div>
+                                      </td>
+
+                                      <td class="h-px whitespace-nowrap">
                                         <x-td-var
-                                          :var="$user->email"
+                                          :var="\Carbon\Carbon::parse($user->last_seen)->diffForHumans()"
+                                        />
+                                      </td>
+
+                                      @include(
+                                        'backend.managedata.visitor._ban'
+                                      )
+
+                                      <td class="size-px whitespace-nowrap">
+                                        <x-td-action
+                                          :id="$user->id"
+
+                                          :show="route(
+                                            'users.show', $user->url
+                                          )"
+
+                                          :edit="route(
+                                            'users.edit', $user->url
+                                          )"
+
+                                          :delete="route(
+                                            'users.destroy', $user->url
+                                          )"
                                         />
                                       </td>
                                     </tr>

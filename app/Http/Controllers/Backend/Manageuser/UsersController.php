@@ -185,4 +185,22 @@ class UsersController extends Controller
 
     return redirect()->route('users.index');
   }
+
+  public function changeStatus($id, $status)
+  {
+    $user = User::findOrFail($id);
+
+    $isBanned = $status === 'banned';
+
+    $user->status = $isBanned ? 0 : 1;
+    $user->save();
+
+    $message = $isBanned
+      ? "User {$user->email}! berhasil di banned."
+      : "User {$user->email}! berhasil di unbanned.";
+
+    Alert::success('success', $message);
+
+    return redirect()->route('visitor');
+  }
 }

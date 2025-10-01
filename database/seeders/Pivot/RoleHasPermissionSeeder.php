@@ -38,9 +38,7 @@ class RoleHasPermissionSeeder extends Seeder
 
         // VISITOR
         'visitor',
-        'visitor.online',
         'visitor.banned',
-        'visitor.offline',
         'visitor.device',
 
         // ACCESS
@@ -57,6 +55,7 @@ class RoleHasPermissionSeeder extends Seeder
         'users.edit',
         'users.update',
         'users.destroy',
+        'users.change.status',
 
         // ROLES
         'roles.index',
