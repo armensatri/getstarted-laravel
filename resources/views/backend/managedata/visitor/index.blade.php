@@ -62,6 +62,15 @@
                                         :route="route('visitor')"
                                       />
                                     </div>
+
+                                    <div class="search">
+                                      <form action="/visitor">
+                                        <x-search
+                                          search="visitor"
+                                          placeholder="Search data visitor"
+                                        />
+                                      </form>
+                                    </div>
                                   </div>
                                 </div>
                               </div>

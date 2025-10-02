@@ -43,6 +43,8 @@ class RoleHasPermissionSeeder extends Seeder
 
         // ACCESS
         'access',
+        'access.menu',
+        'access.up.menu',
 
         // STATISTIC
         'statistic',
