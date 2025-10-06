@@ -19,12 +19,12 @@ Route::group(
     Route::controller(RoleAccessMenuController::class)->group(
       function () {
         Route::get(
-          '/access/menu/role/{url}/{name}',
+          '/access/menu/{url}',
           'accessMenu'
         )->name('access.menu');
 
         Route::post(
-          '/access/menu/role',
+          '/access/menu',
           'accessUpMenu'
         )->name('access.up.menu');
       }

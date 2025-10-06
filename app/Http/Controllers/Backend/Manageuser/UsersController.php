@@ -196,8 +196,8 @@ class UsersController extends Controller
     $user->save();
 
     $message = $isBanned
-      ? "User {$user->email}! berhasil di banned."
-      : "User {$user->email}! berhasil di unbanned.";
+      ? "User {$user->username}! berhasil di banned."
+      : "User {$user->username}! berhasil di unbanned.";
 
     Alert::success('success', $message);
 

@@ -29,7 +29,6 @@
         <div>
           <a href="{{ route('access.menu', [
               'url' => $role->url,
-              'name' => $role->name
             ]) }}"
             class="inline-flex items-center justify-center px-2.5 py-2 bg-slate-100 rounded-[10px] border border-gray-400 hover:bg-green-100">
             <img src="{{ asset('backend/img/menu/menus.jpg') }}"
