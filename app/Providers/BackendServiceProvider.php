@@ -27,6 +27,7 @@ use App\View\Components\Backend\TableHeader\{
 };
 
 use App\View\Components\Backend\Button\{
+  Indexs,
   ButtonCreate,
   ButtonCreateData,
   ButtonUpdateData,
@@ -85,6 +86,7 @@ class BackendServiceProvider extends ServiceProvider
     Blade::component('search', Search::class);
 
     // BUTTON
+    Blade::component('indexs', Indexs::class);
     Blade::component('button-create', ButtonCreate::class);
     Blade::component('button-create-data', ButtonCreateData::class);
     Blade::component('button-update-data', ButtonUpdateData::class);

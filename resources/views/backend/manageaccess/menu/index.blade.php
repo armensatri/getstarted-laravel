@@ -47,14 +47,11 @@
 
                           <div class="table-header">
                             <div class="inline-flex items-center gap-x-2">
-                              <div class="back-to">
-                                <a href="{{ route('access') }}">
-                                  <button type="button"
-                                    class="inline-flex items-center px-3 py-[7px] text-sm font-medium gap-1 tracking-wide text-black bg-blue-200 border border-gray-400 rounded-[13px] hover:bg-blue-600 hover:text-white cursor-pointer">
-                                    <i class="bi bi-arrow-left-circle"></i>
-                                    to access
-                                  </button>
-                                </a>
+                              <div class="indexs">
+                                <x-indexs
+                                  :route="route('access')"
+                                  button-name="to access"
+                                />
                               </div>
                             </div>
                           </div>
@@ -114,6 +111,12 @@
                                     :var="$menu->url"
                                   />
                                 </td>
+
+                                <td class="size-px whitespace-nowrap">
+                                  @include(
+                                    'backend.manageaccess.menu.input-checkbox'
+                                  )
+                                </td>
                               </tr>
                             @endforeach
                           </tbody>
@@ -137,4 +140,62 @@
       </section>
     </div>
   </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      document.querySelectorAll(".access-checkbox").forEach((checkbox) => {
+        checkbox.addEventListener("change", async function () {
+
+          const roleId = this.getAttribute("data-role");
+          const menuId = this.getAttribute("data-menu");
+          const roleUrl = this.getAttribute("data-url");
+          const isChecked = this.checked ? 1 : 0;
+
+          try {
+            const response = await fetch("{{ route('access.up.menu') }}", {
+              method: "POST",
+
+              headers: {
+                "Content-Type": "application/json",
+                "X-CSRF-TOKEN": document.querySelector(
+                  'meta[name="csrf-token"]'
+                ).content,
+              },
+
+              body: JSON.stringify({
+                role_id: roleId,
+                menu_id: menuId,
+                role_url: roleUrl,
+                is_checked: isChecked
+              }),
+            });
+
+            if (!response.ok) {
+              throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+
+            const result = await response.json();
+
+            if (result.success) {
+              Swal.fire({
+                title: "success",
+                text: result.message,
+                icon: "success",
+              }).then(() => {
+                window.location.href =
+                "{{ route('access.menu', [':url']) }}"
+                .replace(":url", roleUrl)
+              })
+            } else {
+              throw new Error(result.message);
+            }
+          } catch (error) {
+            console.error("error:", error);
+            Swal.fire("error", "Something went wrong!", "error");
+            this.checked = !this.checked;
+          }
+        });
+      });
+    });
+  </script>
 @endsection
