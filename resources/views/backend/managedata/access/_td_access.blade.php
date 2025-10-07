@@ -39,7 +39,9 @@
         </div>
 
         <div>
-          <a href=""
+          <a href="{{ route('access.submenu', [
+              'url' => $role->url,
+            ]) }}"
             class="inline-flex items-center justify-center px-2.5 py-2
             bg-slate-100 rounded-[10px] border border-gray-400 hover:bg-blue-100">
             <img src="{{ asset('backend/img/menu/submenus.jpg') }}"
@@ -50,7 +52,9 @@
         </div>
 
         <div>
-          <a href=""
+          <a href="{{ route('access.permission', [
+              'url' => $role->url,
+            ]) }}"
             class="inline-flex items-center justify-center px-2.5 py-2
             bg-slate-100 rounded-[10px] border border-gray-400 hover:bg-red-100">
             <img src="{{ asset('backend/img/menu/permissions.jpg') }}"

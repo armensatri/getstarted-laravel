@@ -18,7 +18,6 @@ return new class extends Migration
         ->constrained('menus')
         ->cascadeOnDelete()
         ->cascadeOnUpdate();
-      $table->timestamps();
     });
 
     Schema::create('role_has_submenu', function (Blueprint $table) {
@@ -31,7 +30,6 @@ return new class extends Migration
         ->constrained('submenus')
         ->cascadeOnDelete()
         ->cascadeOnUpdate();
-      $table->timestamps();
     });
 
     Schema::create('role_has_permission', function (Blueprint $table) {
@@ -44,7 +42,6 @@ return new class extends Migration
         ->constrained('permissions')
         ->cascadeOnDelete()
         ->cascadeOnUpdate();
-      $table->timestamps();
     });
   }
 

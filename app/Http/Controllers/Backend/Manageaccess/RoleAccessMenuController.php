@@ -12,7 +12,8 @@ class RoleAccessMenuController extends Controller
 {
   public function accessMenu($url)
   {
-    $role = Role::where('url', $url)->firstOrFail();
+    $role = Role::query()->where('url', $url)
+      ->firstOrFail();
 
     $menus = Menu::query()
       ->select(['id', 'sm', 'name', 'url'])
@@ -41,13 +42,13 @@ class RoleAccessMenuController extends Controller
       ->where($data)
       ->exists();
 
-    if ($exists) {
-      DB::table('role_has_menu')->where($data)->delete();
-      $message = 'Data menu! berhasil di hapus.';
-    } else {
-      DB::table('role_has_menu')->insert($data);
-      $message = 'Data menu! berhasil di tambahkan.';
-    }
+    $exists
+      ? DB::table('role_has_menu')->where($data)->delete()
+      : DB::table('role_has_menu')->insert($data);
+
+    $message = $exists
+      ? 'Menu access! berhasil di delete.'
+      : 'Menu access! berhasil di tambahkan.';
 
     return response()->json([
       'success' => true,
