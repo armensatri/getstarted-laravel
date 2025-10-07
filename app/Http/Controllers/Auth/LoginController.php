@@ -6,11 +6,14 @@ use Carbon\Carbon;
 use Illuminate\Support\Str;
 use App\Models\Manageuser\User;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Redirect;
 use RealRashid\SweetAlert\Facades\Alert;
 use App\Http\Requests\Auth\Login\LoginSr;
-use Illuminate\Support\Facades\RateLimiter;
+
+use Illuminate\Support\Facades\{
+  Auth,
+  Redirect,
+  RateLimiter
+};
 
 class LoginController extends Controller
 {
