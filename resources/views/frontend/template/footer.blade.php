@@ -54,7 +54,7 @@
       </div>
     </div>
 
-    <hr class="max-w-md my-6 border-gray-200 sm:mx-auto lg:my-8">
+    <hr class="max-w-md my-6 border-sky-200 sm:mx-auto lg:my-8">
 
     <div class="w-full mt-6">
       <div class="mb-4 text-base font-bold text-center text-black uppercase">
