@@ -1,3 +1,4 @@
+@dd($user);
 @extends('backend.template.main')
 
 @section('content-backend')
