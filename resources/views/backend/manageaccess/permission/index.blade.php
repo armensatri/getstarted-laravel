@@ -56,7 +56,7 @@
                             </div>
 
                             <div class="flex items-center text-[15px] text-gray-600 whitespace-nowrap p-2 py-1.5 tracking-wide">
-                              {{ $permission->name }}
+                              {{ $permission->id }} {{ $permission->name }}
                             </div>
                           </div>
                         @endforeach
@@ -78,12 +78,13 @@
         checkbox.addEventListener("change", async function () {
 
           const roleId = this.getAttribute("data-role");
-          const menuId = this.getAttribute("data-menu");
+          const permissionId = this.getAttribute("data-permission");
           const roleUrl = this.getAttribute("data-url");
           const isChecked = this.checked ? 1 : 0;
 
           try {
-            const response = await fetch("{{ route('access.up.menu') }}", {
+            const response = await fetch(
+              "{{ route('access.up.permission') }}", {
               method: "POST",
 
               headers: {
@@ -95,7 +96,7 @@
 
               body: JSON.stringify({
                 role_id: roleId,
-                menu_id: menuId,
+                permission_id: permissionId,
                 role_url: roleUrl,
                 is_checked: isChecked
               }),
@@ -114,7 +115,7 @@
                 icon: "success",
               }).then(() => {
                 window.location.href =
-                "{{ route('access.menu', [':url']) }}"
+                "{{ route('access.permission', [':url']) }}"
                 .replace(":url", roleUrl)
               })
             } else {

@@ -28,6 +28,9 @@ class RoleHasPermissionSeeder extends Seeder
         'owner',
 
         // PROFILE
+        'profile.index',
+        'profile.edit',
+        'profile.update',
 
         // PERSONAL PUBLIC
 
@@ -128,6 +131,7 @@ class RoleHasPermissionSeeder extends Seeder
       ],
 
       'superadmin' => [
+        'profile.index',
         // DASHBOARD
         'superadmin'
       ],
