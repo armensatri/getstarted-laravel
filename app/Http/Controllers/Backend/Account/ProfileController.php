@@ -25,7 +25,13 @@ class ProfileController extends Controller
     $user = Auth::user();
 
     return view('backend.account.profile.edit', [
-      'title' => 'Profile edit ' . '@' . $user->username
+      'title' => 'Profile edit',
+      'user' => $user
     ]);
+  }
+
+  public function update(ProfileUr $request, User $user)
+  {
+    //
   }
 }

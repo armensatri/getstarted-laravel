@@ -12,7 +12,30 @@
       </section>
 
       <section class="w-full px-3 mt-8 mb-5">
-        {{-- content backend --}}
+        <div class="w-full">
+          <div class="breadcrumb">
+            @include('backend.sbreadcrumb.profile.edit')
+          </div>
+
+          <form action="{{ route('profile.update') }}"
+            method="POST"
+            enctype="multipart/form-data">
+            @method('PATCH')
+            @csrf
+
+            <div class="x-border">
+              <div class="gap-8 xl:gap-14 max-auto md:flex">
+                //
+              </div>
+
+              <div class="mt-8">
+                <x-button-update-data
+                  button-name="Update data"
+                />
+              </div>
+            </div>
+          </form>
+        </div>
       </section>
     </div>
   </div>

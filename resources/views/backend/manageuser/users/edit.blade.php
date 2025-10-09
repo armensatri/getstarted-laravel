@@ -1,4 +1,3 @@
-@dd($user);
 @extends('backend.template.main')
 
 @section('content-backend')
@@ -21,7 +20,7 @@
           <form action="{{ route('users.update', $user->url) }}"
             method="POST"
             enctype="multipart/form-data">
-            @method('PATCH')
+            @method('PUT')
             @csrf
 
             <div class="x-border">

@@ -56,7 +56,15 @@
                             </div>
 
                             <div class="flex items-center text-[15px] text-gray-600 whitespace-nowrap p-2 py-1.5 tracking-wide">
-                              {{ $permission->id }} {{ $permission->name }}
+                              <div class="flex gap-1 items-center">
+                                <div class="text-xs text-black">
+                                  {{ $permission->id }}
+                                </div>
+                                <div>-</div>
+                                <div>
+                                  {{ $permission->name }}
+                                </div>
+                              </div>
                             </div>
                           </div>
                         @endforeach
