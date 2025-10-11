@@ -57,7 +57,7 @@ class UserUr extends FormRequest
       'username.required' => 'User..username! harus di isi',
       'username.min' => 'User..username! minimal 3 karakter',
       'username.max' => 'User..username! maksimal 14 karakter',
-      'username.regex' => 'User..username! hanya boleh huruf kecil saja',
+      'username.regex' => 'User..username! hanya boleh huruf kecil saja dan tanpa spasi',
 
       'email.required' => 'User..email! harus di isi',
       'email.email' => 'User..email! tidak valid',

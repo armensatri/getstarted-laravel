@@ -61,7 +61,7 @@ class RegisterSr extends FormRequest
       'username.required' => 'Username! harus di isi',
       'username.min' => 'Username! minimal 5 karakter',
       'username.max' => 'Username! maksimal 15 karakter',
-      'username.regex' => 'Username! hanya boleh huruf kecil saja',
+      'username.regex' => 'User..username! hanya boleh huruf kecil saja dan tanpa spasi',
       'username.unique' => 'Username! sudah terdaftar',
 
       'email.required' => 'Email! harus di isi',

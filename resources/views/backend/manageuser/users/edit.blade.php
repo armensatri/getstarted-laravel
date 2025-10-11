@@ -20,7 +20,7 @@
           <form action="{{ route('users.update', $user->url) }}"
             method="POST"
             enctype="multipart/form-data">
-            @method('PUT')
+            @method('PATCH')
             @csrf
 
             <div class="x-border">

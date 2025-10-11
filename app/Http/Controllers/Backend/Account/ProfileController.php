@@ -5,8 +5,13 @@ namespace App\Http\Controllers\Backend\Account;
 use Illuminate\Http\Request;
 use App\Models\Manageuser\User;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Auth;
+use RealRashid\SweetAlert\Facades\Alert;
 use App\Http\Requests\Account\Profile\ProfileUr;
+
+use Illuminate\Support\Facades\{
+  Auth,
+  Storage,
+};
 
 class ProfileController extends Controller
 {
@@ -22,7 +27,7 @@ class ProfileController extends Controller
 
   public function edit()
   {
-    $user = Auth::user();
+    $user = User::find(Auth::id());
 
     return view('backend.account.profile.edit', [
       'title' => 'Profile edit',
@@ -30,8 +35,29 @@ class ProfileController extends Controller
     ]);
   }
 
-  public function update(ProfileUr $request, User $user)
+  public function update(ProfileUr $request)
   {
-    //
+    $user = User::find(Auth::id());
+
+    $dataupdate = $request->validated();
+
+    if ($request->hasFile('image')) {
+      if (!empty($user->image)) {
+        Storage::delete($user->image);
+      }
+
+      $dataupdate['image'] = $request->file('image')->store(
+        'manageuser/users'
+      );
+    }
+
+    $user->update($dataupdate);
+
+    Alert::success(
+      'success',
+      'Data profile berhasil diperbarui.'
+    );
+
+    return redirect()->route('profile.index');
   }
 }

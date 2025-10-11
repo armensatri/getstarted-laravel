@@ -25,7 +25,46 @@
 
             <div class="x-border">
               <div class="gap-8 xl:gap-14 max-auto md:flex">
-                //
+                <x-input
+                  label-for="name"
+                  label-name="User..name"
+                  type="text"
+                  id="name"
+                  name="name"
+                  value-old="name"
+                  :value-default="$user->name"
+                  error="name"
+                  placeholder="Masukkan nama user"
+                />
+
+                <x-input
+                  label-for="username"
+                  label-name="User..username"
+                  type="text"
+                  id="username"
+                  name="username"
+                  value-old="username"
+                  :value-default="$user->username"
+                  error="username"
+                  placeholder="Masukkan username user"
+                />
+              </div>
+
+              <div class="gap-8 xl:gap-14 max-auto md:flex">
+                <x-input-image
+                  label-for="image"
+                  label-name="User..image"
+                  type="file"
+                  id="image"
+                  name="image"
+                  error="image"
+                />
+
+                <x-input-image-preview
+                  label-for="image"
+                  label-name="User..preview"
+                  :image="$user->image"
+                />
               </div>
 
               <div class="mt-8">

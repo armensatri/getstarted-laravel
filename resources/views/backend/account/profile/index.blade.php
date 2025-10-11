@@ -11,6 +11,12 @@
         </div>
       </section>
 
+      <div class="alert">
+        @if (session()->has('alert'))
+          @include('sweetalert::alert')
+        @endif
+      </div>
+
       <section class="w-full px-4 mt-8 mb-5">
         @include('backend.sbreadcrumb.profile.index')
 
