@@ -73,22 +73,22 @@ class SubmenuSeeder extends Seeder
       [
         'menu_id' => 5,
         'ssm' => 2,
-        'name' => 'personal public',
-        'slug' => 'personal-public',
-        'route' => '/personal/public',
-        'active' => 'personal/public',
-        'routename' => '/personal/public',
+        'name' => 'personal',
+        'slug' => 'personal',
+        'route' => '/personal',
+        'active' => 'personal',
+        'routename' => '/personal',
         'description' => 'profile personal public'
       ],
 
       [
         'menu_id' => 5,
         'ssm' => 3,
-        'name' => 'change password',
-        'slug' => 'change-password',
-        'route' => '/change/password',
-        'active' => 'change/password',
-        'routename' => '/change/password',
+        'name' => 'changepassword',
+        'slug' => 'changepassword',
+        'route' => '/changepassword',
+        'active' => 'changepassword',
+        'routename' => '/changepassword',
         'description' => 'change password user'
       ],
 

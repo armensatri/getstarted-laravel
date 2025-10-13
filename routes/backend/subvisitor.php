@@ -13,6 +13,5 @@ Route::middleware(
 )->group(
   function () {
     Route::get('/banned', 'banned')->name('banned');
-    Route::get('/device', 'device')->name('device');
   }
 );

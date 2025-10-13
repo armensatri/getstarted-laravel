@@ -54,11 +54,4 @@ class VisitorController extends Controller
       'users' => $users
     ]);
   }
-
-  public function device()
-  {
-    return view('backend.managedata.visitor.device', [
-      'title' => 'Visitor device'
-    ]);
-  }
 }

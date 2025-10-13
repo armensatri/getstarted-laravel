@@ -82,7 +82,7 @@
                                       name="role"
                                     />
                                     <x-th
-                                      name="status"
+                                      name="banned"
                                     />
                                     <x-th-action/>
                                   </tr>

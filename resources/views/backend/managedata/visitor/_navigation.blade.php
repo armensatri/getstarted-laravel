@@ -9,9 +9,3 @@
   active="visitor/banned"
   menu-name="Banned"
 />
-
-<x-visitor-navigation
-  :route="route('visitor.device')"
-  active="visitor/device"
-  menu-name="Device"
-/>

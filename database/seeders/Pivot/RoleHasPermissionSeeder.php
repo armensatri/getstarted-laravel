@@ -31,9 +31,6 @@ class RoleHasPermissionSeeder extends Seeder
         // 'member',
 
         // PROFILE
-        'profile.index',
-        'profile.edit',
-        'profile.update',
 
         // PERSONAL PUBLIC
 
@@ -45,7 +42,6 @@ class RoleHasPermissionSeeder extends Seeder
         // VISITOR
         'visitor',
         'visitor.banned',
-        'visitor.device',
 
         // ACCESS
         'access',
@@ -141,9 +137,6 @@ class RoleHasPermissionSeeder extends Seeder
         // 'member',
 
         // PROFILE
-        'profile.index',
-        'profile.edit',
-        'profile.update',
 
         // PERSONAL PUBLIC
 
@@ -155,7 +148,6 @@ class RoleHasPermissionSeeder extends Seeder
         // VISITOR
         'visitor',
         'visitor.banned',
-        'visitor.device',
 
         // ACCESS
         'access',
@@ -251,9 +243,6 @@ class RoleHasPermissionSeeder extends Seeder
         // 'member',
 
         // PROFILE
-        'profile.index',
-        'profile.edit',
-        'profile.update',
 
         // PERSONAL PUBLIC
 
@@ -265,7 +254,6 @@ class RoleHasPermissionSeeder extends Seeder
         // VISITOR
         // 'visitor',
         // 'visitor.banned',
-        // 'visitor.device',
 
         // ACCESS
         // 'access',
@@ -361,9 +349,6 @@ class RoleHasPermissionSeeder extends Seeder
         'member',
 
         // PROFILE
-        'profile.index',
-        'profile.edit',
-        'profile.update',
 
         // PERSONAL PUBLIC
 
@@ -375,7 +360,6 @@ class RoleHasPermissionSeeder extends Seeder
         // VISITOR
         // 'visitor',
         // 'visitor.banned',
-        // 'visitor.device',
 
         // ACCESS
         // 'access',

@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests\Account\Profile;
+namespace App\Http\Requests\Account\ChangePassword;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class ProfileUr extends FormRequest
+class ChangePasswordUr extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.

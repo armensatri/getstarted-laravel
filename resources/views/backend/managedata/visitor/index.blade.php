@@ -40,7 +40,7 @@
             <div class="w-full">
               <div class="mt-16">
                 <div class="content">
-                  <section class="w-full px-3 mt-8 mb-5 xl:flex xl:justify-center">
+                  <section class="w-full px-3 mt-8 mb-5 flex overflow-x-auto overflow-y-hidden">
                     <div class="max-w-[85rem] mx-auto">
                       <div class="flex flex-col">
                         <div class="-m-1.5 overflow-x-auto min-w-full">
@@ -94,7 +94,10 @@
                                       name="auth"
                                     />
                                     <x-th
-                                      name="status"
+                                      name="banned"
+                                    />
+                                    <x-th
+                                      name="verify"
                                     />
                                     <x-th
                                       name="lastseen"
@@ -142,12 +145,23 @@
                                           />
                                         </div>
                                       </td>
+
                                       <td class="h-px whitespace-nowrap">
                                         <div class="flex justify-center items-center">
                                           <x-td-var-bg
                                             :bg="$user->status()['bg']"
                                             :text="$user->status()['text']"
                                             :var="$user->status()['status']"
+                                          />
+                                        </div>
+                                      </td>
+
+                                      <td class="h-px whitespace-nowrap">
+                                        <div class="flex justify-center items-center">
+                                          <x-td-var-bg
+                                            bg="bg-red-200"
+                                            text="text-red-800"
+                                            var="no verify"
                                           />
                                         </div>
                                       </td>

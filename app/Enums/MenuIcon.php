@@ -21,8 +21,8 @@ class MenuIcon
 
       // ACCOUNT
       'profile' => 'profile.jpg',
-      'personal public' => 'personal-public.png',
-      'change password' => 'change-password.jpg',
+      'personal' => 'personal.png',
+      'changepassword' => 'changepassword.jpg',
 
       // MANAGEDATA
       'data' => 'data.png',
