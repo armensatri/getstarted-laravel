@@ -10,17 +10,19 @@ class RoleHasPermissionSeeder extends Seeder
 {
   public function run(): void
   {
-    $roles = collect([
+    $roles = [
       'owner',
       'superadmin',
       'admin',
       'member'
-    ])->mapWithKeys(fn($roleName) => [
-      $roleName = Role::firstOrCreate(
-        ['name' => $roleName],
+    ];
+
+    foreach ($roles as $rolename) {
+      Role::firstOrCreate(
+        ['name' => $rolename],
         ['guard_name' => 'web']
-      ),
-    ]);
+      );
+    }
 
     $roleHasPermissions = [
       'owner' => [
@@ -31,10 +33,17 @@ class RoleHasPermissionSeeder extends Seeder
         // 'member',
 
         // PROFILE
+        'profile',
+        'profile.edit',
+        'profile.update',
 
         // PERSONAL PUBLIC
+        'personal',
 
         // CHANGE PASSWORD
+        'changepassword',
+        'changepassword.edit',
+        'changepassword.update',
 
         // DATA
         'data',
@@ -137,10 +146,17 @@ class RoleHasPermissionSeeder extends Seeder
         // 'member',
 
         // PROFILE
+        'profile',
+        'profile.edit',
+        'profile.update',
 
         // PERSONAL PUBLIC
+        'personal',
 
         // CHANGE PASSWORD
+        'changepassword',
+        'changepassword.edit',
+        'changepassword.update',
 
         // DATA
         'data',
@@ -243,10 +259,17 @@ class RoleHasPermissionSeeder extends Seeder
         // 'member',
 
         // PROFILE
+        'profile',
+        'profile.edit',
+        'profile.update',
 
         // PERSONAL PUBLIC
+        'personal',
 
         // CHANGE PASSWORD
+        'changepassword',
+        'changepassword.edit',
+        'changepassword.update',
 
         // DATA
         // 'data',
@@ -349,10 +372,17 @@ class RoleHasPermissionSeeder extends Seeder
         'member',
 
         // PROFILE
+        'profile',
+        'profile.edit',
+        'profile.update',
 
         // PERSONAL PUBLIC
+        'personal',
 
         // CHANGE PASSWORD
+        'changepassword',
+        'changepassword.edit',
+        'changepassword.update',
 
         // DATA
         // 'data',

@@ -31,6 +31,9 @@ class RoleHasSubmenuSeeder extends Seeder
       'member',
 
       // ACCOUNT
+      'profile',
+      'personal',
+      'changepassword',
 
       // MANAGEDATA
       'data',
@@ -68,6 +71,9 @@ class RoleHasSubmenuSeeder extends Seeder
         // 'member',
 
         // ACCOUNT
+        'profile',
+        'personal',
+        'changepassword',
 
         // MANAGEDATA
         'data',
@@ -143,6 +149,9 @@ class RoleHasSubmenuSeeder extends Seeder
         // 'member',
 
         // ACCOUNT
+        'profile',
+        'personal',
+        'changepassword',
 
         // MANAGEDATA
         // 'data',
@@ -179,6 +188,9 @@ class RoleHasSubmenuSeeder extends Seeder
         'member',
 
         // ACCOUNT
+        'profile',
+        'personal',
+        'changepassword',
 
         // MANAGEDATA
         // 'data',

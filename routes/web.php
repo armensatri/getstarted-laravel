@@ -15,6 +15,8 @@ require __DIR__ . '/backend/managemenu.php';
 require __DIR__ . '/backend/published.php';
 require __DIR__ . '/backend/subvisitor.php';
 require __DIR__ . '/backend/subaccess.php';
+require __DIR__ . '/backend/subprofile.php';
+require __DIR__ . '/backend/subchangepassword.php';
 
 // FCONTENT
 
