@@ -26,6 +26,6 @@ Route::group(
     Route::get('/changepassword', [
       ChangePasswordController::class,
       'index'
-    ])->name('profile');
+    ])->name('changepassword');
   }
 );

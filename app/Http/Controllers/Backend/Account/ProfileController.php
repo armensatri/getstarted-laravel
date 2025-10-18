@@ -55,7 +55,7 @@ class ProfileController extends Controller
 
     Alert::success(
       'success',
-      'Data profile berhasil diperbarui.'
+      'Data profile berhasil di update.'
     );
 
     return redirect()->route('profile');
