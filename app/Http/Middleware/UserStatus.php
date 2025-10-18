@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
+use App\Models\Manageuser\User;
 use Illuminate\Support\Facades\Auth;
 use RealRashid\SweetAlert\Facades\Alert;
 use Symfony\Component\HttpFoundation\Response;
@@ -15,6 +16,11 @@ class UserStatus
     $user = Auth::user();
 
     if ($user && $user->status === 0) {
+      User::where('id', Auth::id())->update([
+        'status_on_of' => 0,
+        'last_seen' => null
+      ]);
+
       Auth::logout();
 
       $request->session()->invalidate();
